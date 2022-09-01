@@ -1,0 +1,37 @@
+section.c-section
+  .l-container.-small
+    header.c-head-secondary
+      p.c-head-secondary__cat(lang="en") #{desc.category}
+      h1.c-head-secondary__main #{desc.name}
+    
+    .js-swiper-wrap.p-garally
+      .js-swiper.swiper
+        ul.p-garally__list.swiper-wrapper
+          each item in desc.garally
+            li.p-garally__item.swiper-slide
+              .swiper-slide__inner
+                img(src=`/assets/img/work/${item}`)
+      .swiper-pagination
+      .swiper-button-prev
+      .swiper-button-next
+    
+    each content in contents
+      dl.p-desc
+        dt.p-desc__head #{content.head}
+        dd.p-desc__content
+          if content.dd
+            each e in content.dd
+              if e.name || e.url
+                p.p-desc__text #{e.name}
+                  a(href=e.url, target="_blank", rel="noopener noreferrer") #{e.url}
+              
+              if e.smallText
+                p.p-desc__text #{e.text}
+                p.p-desc__text.-small #{e.smallText}
+
+            
+          if content.text
+            p.p-desc__text #{content.text}
+
+    p.c-button.c-button-radius.-center.-small.-mt
+      a.c-button-radius__text(href="/#work") 作品一覧

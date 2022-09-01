@@ -1,0 +1,128 @@
+@charset 'UTF-8';
+@use "sass:math";
+@use "../../global" as *;
+
+/*
+  skill
+*/
+.p-skill {
+  &__item {
+    display: flex;
+    padding: pxToRem(24px) pxToRem(20px);
+    border-radius: 20px;
+    box-shadow: 5px 5px 9px $shadow-color, -5px -5px 9px #fff;
+    & + & {
+      margin-top: pxToRem(24px);
+    }
+  }
+  &__img {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+    border-radius: 50%;
+    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.2), inset -4px -4px 8px rgba(255, 255, 255, 0.5);
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      z-index: -1;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+    }
+    &.-html::before {
+      background: #f8a590;
+    }
+    &.-css::before {
+      background: #7abdef;
+    }
+    &.-js::before {
+      background: #efd07c;
+    }
+    &.-wp::before {
+      background: #a1b6bf;
+    }
+    &.-webpack::before {
+      background: #abd3e6;
+    }
+    &.-git::before {
+      background: #f1725c;
+    }
+    &.-illustlator::before {
+      background: #ffae63;
+    }
+    &.-photoshop::before {
+      background: #67d2f4;
+    }
+    &.-xd::before {
+      background: #f1b7e1;
+    }
+    &.-figma::before {
+      background: #7ece96;
+    }
+    &.-ae::before {
+      background: #9e98f1;
+    }
+    &.-ga::before {
+      background: #fbbe33;
+    }
+  }
+  &__icon {
+    display: block;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+  }
+  &__textArea {
+    box-sizing: border-box;
+    width: calc(100% - 70px);
+    padding-left: pxToRem(12px);
+  }
+  &__head {
+    margin-bottom: pxToRem(4px);
+    font-size: pxToRem(14px);
+    line-height: 1.5;
+  }
+  &__text {
+    font-size: pxToRem(13px);
+    line-height: 1.8;
+  }
+  @include mq(md) {
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: pxToRem(20px) pxToRem(20px);
+    }
+    &__item {
+      box-sizing: border-box;
+      width: calc(50% - pxToRem(10px));
+      & + & {
+        margin-top: 0;
+      }
+    }
+    &__textArea {
+      padding-left: pxToRem(20px);
+    }
+    &__head {
+      margin-bottom: pxToRem(4px);
+      font-size: pxToRem(15px);
+    }
+    &__text {
+      font-size: pxToRem(14px);
+    }
+  }
+}
+
+@for $i from 1 through 10 {
+  .-height#{$i} {
+    &::before {
+      height: $i * 10%;
+    }
+  }
+}

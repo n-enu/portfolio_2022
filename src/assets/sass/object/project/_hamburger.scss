@@ -1,0 +1,84 @@
+@charset 'UTF-8';
+@use "sass:math";
+@use "../../global" as *;
+/*
+  Hamburger
+*/
+.p-hamburger {
+  $this: &;
+  position: absolute;
+  z-index: 4;
+  top: 5px;
+  right: 5%;
+  width: 40px;
+  height: 40px;
+  margin: auto;
+  transition-property: transform;
+  transition-duration: 0.6s;
+  transition-timing-function: $easing;
+  border: 0;
+  background: transparent;
+  text-align: center;
+
+  @include mq(md) {
+    display: none;
+  }
+
+  &__line {
+    display: block;
+    position: absolute;
+    top: 8px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 32px;
+    height: 1px;
+    margin: auto;
+    transition-property: transform, background-color, opacity, transform-origin;
+    transition-duration: $duration;
+    transition-timing-function: $easing;
+    background-color: $main-color;
+  }
+
+  &__line:before,
+  &__line:after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    height: 100%;
+    transition: inherit;
+    background-color: $main-color;
+  }
+
+  &__line:before {
+    width: 100%;
+    transform: translate(0, -8px);
+  }
+
+  &__line:after {
+    left: auto;
+    width: 80%;
+    transform: translate(0, 8px);
+  }
+
+  .is-drawerActive & {
+    &__line {
+      background-color: transparent;
+
+      &:before,
+      &:after {
+        transform: translate(0, 0);
+        background-color: $main-color;
+      }
+
+      &:before {
+        transform: rotate(-30deg);
+      }
+      &:after {
+        width: 100%;
+        transform: rotate(30deg);
+      }
+    }
+  }
+}

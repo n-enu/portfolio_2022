@@ -1,0 +1,51 @@
+@charset 'UTF-8';
+@use "sass:math";
+@use "../../global" as *;
+
+/*
+  Desc
+*/
+.p-desc {
+  padding-top: pxToRem(20px);
+  &__head {
+    margin-bottom: pxToRem(4px);
+    font-size: pxToRem(14px);
+    font-weight: bold;
+  }
+  &__text {
+    font-size: pxToRem(13px);
+    &.-small {
+      font-size: pxToRem(12px);
+    }
+    a {
+      color: $secondary-text-color;
+    }
+  }
+  @include mq(md) {
+    display: flex;
+    padding: pxToRem(36px) 0 0;
+    &__head {
+      min-width: pxToRem(120px);
+      margin-bottom: pxToRem(6px);
+      font-size: pxToRem(15px);
+      font-weight: bold;
+    }
+    &__content {
+      box-sizing: border-box;
+      width: calc(100% - pxToRem(120px));
+      padding-left: pxToRem(20px);
+    }
+    &__text {
+      font-size: pxToRem(15px);
+      line-height: 1.8;
+      a {
+        a:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  @include mq(lg) {
+    padding: pxToRem(42px) 0 0;
+  }
+}

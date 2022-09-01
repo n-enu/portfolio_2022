@@ -1,0 +1,18 @@
+@charset 'UTF-8';
+@use "sass:math";
+@use "../../global" as *;
+/*
+  text
+*/
+.c-text {
+  font-size: pxToRem(14px);
+  &.-center {
+    text-align: center;
+  }
+  &.-left {
+    text-align: left;
+  }
+  &.-right {
+    text-align: right;
+  }
+}

@@ -1,0 +1,87 @@
+extends ../../layout/_main
+
+block append config
+  //- ===========================================
+  //-   ページの設定
+  //- ===========================================
+  -
+    const page = {
+      title: `comparison | 作品一覧 | ${SITE_NAME}`,
+      description: '',
+      path: ROOT_PATH + 'work/comparison/',
+      image: SITE_URL + '/assets/img/ogp.png',
+    }
+
+    const desc = {
+      category: 'Web Design',
+      name: 'オリジナルコーポレートサイト',
+      garally: [
+        'screen_company01_pc.jpg',
+        'screen_company02_pc.jpg',
+        'screen_company03_pc.jpg',
+      ]
+    };
+
+    const contents = [
+      {
+        head: 'URL',
+        dd: [
+          {
+            name: 'Top : ',
+            url: 'https://comparison.n-enu.me/',
+          },
+          {
+            name: 'News : ',
+            url: 'https://comparison.n-enu.me/news/',
+          }
+        ]
+      },
+      {
+        head: '参考',
+        dd: [
+          {
+            text: 'こちらのブログのポートフォリオ掲載可のワイヤーフレームを参考にさせていただきました。',
+            smallText: 'https://pengi-n.co.jp/blog/webdesign-challenge2/',
+          }
+        ]
+      },
+      {
+        head: '概要',
+        text: 'IT系コーポレートサイトのリニューアル。現行サイトに採用のコンテンツがないので、Wantedlyへのリンクを配置し採用応募者数を増やしたい。',
+      },
+      {
+        head: '使用ツール',
+        text: 'XD / Photoshop / HTML / CSS / jQuery / PHP / Wordpress',
+      },
+      {
+        head: 'レスポンシブ',
+        text: '対応',
+      },
+      {
+        head: 'デザイン',
+        text: '20代、30代の若い世代に興味を持もってもらえるようサイト全体に動きをつけ、かたくなりすぎないようなデザインにしました。青をベースにIT企業っぽさ、誠実さ、親しみやすさのバランスを取ることを意識しました。',
+      },
+      {
+        head: 'コーディング',
+        text: 'Wordpressで構築。採用応募者数の増加に繋がるよう、Topページのメインビジュアルに採用情報を掲載できるようにしました。（クリックでWantedlyに遷移する想定。）カスタムフィールドで作成しており、文言の変更やコンテンツの削除も管理画面側で操作可能になっています。',
+      },
+      {
+        head: '制作期間',
+        text: '5日（ デザイン2日 / コーディング3日 ）',
+      },
+    ];
+
+block append head
+  //- ===========================================
+  //-   ページ用のスタイルやスクリプト
+  //- ===========================================
+
+block mainContent
+  //- ===========================================
+  //-   メインコンテンツ
+  //- ===========================================
+  include ../../include/_single
+  
+
+
+

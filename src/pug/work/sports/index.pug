@@ -1,0 +1,53 @@
+extends ../../layout/_main
+
+block append config
+  //- ===========================================
+  //-   ページの設定
+  //- ===========================================
+  -
+    const page = {
+      title: `スポーツジムキャンペーンのバナー | ${SITE_NAME}`,
+      description: '',
+      path: ROOT_PATH + 'work/school-summer/',
+      image: SITE_URL + '/assets/img/ogp.png',
+    }
+
+    const desc = {
+      category: 'Banner',
+      name: 'スポーツジムキャンペーンのバナー',
+      garally: [
+        'bnr_sports_lg.png',
+        'bnr_sports_md.png',
+        'bnr_sports_sm.png',
+      ]
+    };
+
+    const contents = [
+      {
+        head: '概要',
+        text: 'スポーツジム入会金無料キャンペーンを想定して作成しました。',
+      },
+      {
+        head: '使用ツール',
+        text: 'illustlator / Photoshop',
+      },
+      {
+        head: 'デザイン',
+        text: '枠から飛び出るデザインで躍動感を演出。夏前にトレーニングやダイエットを頑張りたいと思っている人へ向けたコピーを入れ、クリックに繋げたいと考えました。人物はPhotoshopで切り抜きグラデーションの加工をしています。',
+      },
+      {
+        head: '制作期間',
+        text: '5時間',
+      },
+    ];
+
+block append head
+  //- ===========================================
+  //-   ページ用のスタイルやスクリプト
+  //- ===========================================
+
+block mainContent
+  //- ===========================================
+  //-   メインコンテンツ
+  //- ===========================================
+  include ../../include/_single

@@ -1,0 +1,190 @@
+extends layout/_main
+
+block append config
+  //- ===========================================
+  //-   ページの設定
+  //- ===========================================
+  -
+    const page = {
+      title: `${SITE_NAME}`,
+      description: '',
+      path: ROOT_PATH,
+      image: SITE_URL + '/assets/img/ogp.png'
+    }
+
+block append head
+  //- ===========================================
+  //-   ページ用のスタイルやスクリプト
+  //- ===========================================
+
+
+block mainContent
+  //- ===========================================
+  //-   メインコンテンツ
+  //- ===========================================
+  .p-hero
+    .l-container
+      .p-hero__content 
+        .p-hero__copy
+          p.p-hero__copy-en Nao Itano
+          p.p-hero__copy-ja はじめまして、イタノナオです。
+        .p-hero__animation
+          #js-animation-mv.p-animation-mv
+  // hero
+
+  section#about.c-section.-pt0
+    .l-container
+      h2.c-head-primary(lang="en")
+        span.c-head-primary__icon
+          img(src="/assets/img/common/icon_about.svg", alt="")
+        | About
+      .p-content.c-section
+        .p-content__imgArea.-circle
+          img(src="https://placehold.jp/9bb6d9/9bb6d9/400x400.png?text=image", alt="")
+        .p-content__textArea
+          p.p-content__head イタノナオ
+          p.p-content__text 見た目だけでは分からないWeb制作の奥深さに興味を持ち、この世界に飛び込みました。あらゆることに配慮できる"#[em やさしいWebデザイナー]"を目指し日々勉強中です。#[br]コーディングが好きですが、幅広く色んなことを勉強したいと思っています。
+      
+      .c-card-icon.c-section
+        ul.c-card-icon__list
+          li.c-card-icon__item
+            .c-card-icon__img: img(src="/assets/img/common/icon_music.svg", alt="")
+            p.c-card-icon__text 京都出身。学生時代は吹奏楽・バンドと音楽に没頭。
+          li.c-card-icon__item
+            .c-card-icon__img: img(src="/assets/img/common/icon_egg.svg", alt="")
+            p.c-card-icon__text 元おむらいす屋さん。大学卒業後約6年間働く。
+          li.c-card-icon__item
+            .c-card-icon__img: img(src="/assets/img/common/icon_pc.svg", alt="")
+            p.c-card-icon__text 前職はWeb制作会社で1年半コーディングを経験。
+          li.c-card-icon__item
+            .c-card-icon__img: img(src="/assets/img/common/icon_design.svg", alt="")
+            p.c-card-icon__text Web制作全般に興味を持ち職業訓練校でデザインを学ぶ。
+
+        .p-content.-reverse.-center
+          .p-content__imgArea
+            #js-animation-hanabi
+          .p-content__textArea
+            p.p-content__text 新しい事に挑戦しようと思い、After Effectsでアニメーションを制作しました。json形式で書き出して実装しています。
+  // about
+
+  section#work.c-section
+    .l-container
+      h2.c-head-primary(lang="en")
+        span.c-head-primary__icon
+          img(src="/assets/img/common/icon_work.svg", alt="")
+        | Work
+      include include/_category
+      include include/_work
+
+      
+  // work
+
+  section#skill.c-section
+    .l-container
+      h2.c-head-primary(lang="en")
+        span.c-head-primary__icon
+          img(src="/assets/img/common/icon_skill.svg", alt="")
+        | Skill
+      
+      .p-skill
+        ul.p-skill__list
+          li.p-skill__item
+            .p-skill__img.-html.-height8
+              span.p-skill__icon: img(src="/assets/img/common/icon_html.svg", alt="")
+            .p-skill__textArea
+              h3.p-skill__head(lang="en") HTML
+              p.p-skill__text 基本的なコーディングができます。ユーザビリティ・アクセシビリティに配慮したマークアップを心がけています。
+
+          li.p-skill__item
+            .p-skill__img.-css.-height8
+              span.p-skill__icon: img(src="/assets/img/common/icon_css.svg", alt="")
+            .p-skill__textArea
+              h3.p-skill__head(lang="en") CSS
+              p.p-skill__text レスポンシブサイトの構築ができます。前職ではSCSSを使用し、gulpでコンパイルしていました。
+
+          li.p-skill__item
+            .p-skill__img.-js.-height4
+              span.p-skill__icon: img(src="/assets/img/common/icon_js.svg", alt="")
+            .p-skill__textArea
+              h3.p-skill__head(lang="en") Javascript
+              p.p-skill__text 複雑なコードを書くことはまだできませんが、ライブラリの実装や調整が可能です。今後強化したいところです。
+
+          li.p-skill__item
+            .p-skill__img.-wp.-height4
+              span.p-skill__icon: img(src="/assets/img/common/icon_wp.svg", alt="")
+            .p-skill__textArea
+              h3.p-skill__head(lang="en") Wordpress
+              p.p-skill__text 基本的なテーマの構築ができます。前職ではコーポレートサイトのWordpress構築を担当することもありました。
+
+          li.p-skill__item
+            .p-skill__img.-webpack.-height2
+              span.p-skill__icon: img(src="/assets/img/common/icon_webpack.svg", alt="")
+            .p-skill__textArea
+              h3.p-skill__head(lang="en") webpack
+              p.p-skill__text 基本的なテーマの構築ができます。前職ではコーポレートサイトのWordpress構築を担当することもありました。
+
+          li.p-skill__item
+            .p-skill__img.-git.-height5
+              span.p-skill__icon: img(src="/assets/img/common/icon_git.svg", alt="")
+            .p-skill__textArea
+              h3.p-skill__head(lang="en") Git
+              p.p-skill__text 基前職ではBitbucket、GUIはSourceTreeを使用していました。コマンドに憧れ勉強中です。
+
+          li.p-skill__item
+            .p-skill__img.-illustlator.-height5
+              span.p-skill__icon: img(src="/assets/img/common/icon_illustlator.svg", alt="")
+            .p-skill__textArea
+              h3.p-skill__head(lang="en") Illustlator
+              p.p-skill__text 職業訓練で学び基本的な操作ができます。グラフィックの作品制作で使用しました。
+
+          li.p-skill__item
+            .p-skill__img.-photoshop.-height5
+              span.p-skill__icon: img(src="/assets/img/common/icon_photoshop.svg", alt="")
+            .p-skill__textArea
+              h3.p-skill__head(lang="en") Photoshop
+              p.p-skill__text 職業訓練で学び基本的な操作ができます。写真の切り抜きやレタッチも可能です。
+
+          li.p-skill__item
+            .p-skill__img.-xd.-height5
+              span.p-skill__icon: img(src="/assets/img/common/icon_xd.svg", alt="")
+            .p-skill__textArea
+              h3.p-skill__head(lang="en") XD
+              p.p-skill__text 独学ですが、よく使用しているアプリケーションなので基本的な操作やプロトタイプ作成が可能です。
+
+          li.p-skill__item
+            .p-skill__img.-figma.-height5
+              span.p-skill__icon: img(src="/assets/img/common/icon_figma.svg", alt="")
+            .p-skill__textArea
+              h3.p-skill__head(lang="en") Figma
+              p.p-skill__text 日本語対応を機に使用してみました。独学ですが、基本的なデザイン制作やプロトタイプ作成が可能です。
+
+          li.p-skill__item
+            .p-skill__img.-ae.-height2
+              span.p-skill__icon: img(src="/assets/img/common/icon_ae.svg", alt="")
+            .p-skill__textArea
+              h3.p-skill__head(lang="en") After Effects
+              p.p-skill__text 日本語対応を機に使用してみました。独学ですが、基本的なデザイン制作やプロトタイプ作成が可能です。
+
+          li.p-skill__item
+            .p-skill__img.-ga.-height2
+              span.p-skill__icon: img(src="/assets/img/common/icon_ga.svg", alt="")
+            .p-skill__textArea
+              h3.p-skill__head(lang="en") Google analytics
+              p.p-skill__text 今後勉強していきたい分野です。Web関係ではありませんが、ブログを始めて時間の取れる時に更新しています。
+
+  // skill
+
+  section#contact.c-section
+   .l-container
+      h2.c-head-primary(lang="en")
+        span.c-head-primary__icon
+          img(src="/assets/img/common/icon_contact.svg", alt="")
+        | Contact
+      p.c-text.-center お問い合わせはこちらのメールアドレスへお願いいたします。
+      p.c-button.c-button-radius.-center.-mt.-width
+        a.c-button-radius__text(href="mailto:np10320@gmail.com", target="_blank", rel="noopener noreferrer", lang="en")
+          span.c-button-radius__icon
+            img(src="/assets/img/common/icon_contact.svg", alt="")
+          | np10320@gmail.com
+
+  // Contact

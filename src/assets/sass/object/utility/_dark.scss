@@ -1,0 +1,49 @@
+@charset 'UTF-8';
+@use "sass:math";
+@use "../../global" as *;
+
+/*
+  Dark
+*/
+body.dark-mode {
+  background: $base-dark-color;
+  color: $dark-text-color;
+  .p-header {
+    background: $base-dark-color;
+  }
+  .p-hero__copy-en {
+    // color: $base-dark-color;
+    text-shadow: 2px 2px 4px $shadow-dark-top, -3px -3px 4px $shadow-dark-bottom;
+  }
+  .c-button-radius__text {
+    background: $base-dark-color;
+    box-shadow: 6px 6px 8px $shadow-dark-top, -6px -6px 8px $shadow-dark-bottom;
+    &:active,
+    &.is-active {
+      box-shadow: inset 6px 6px 8px $shadow-dark-top, inset -6px -6px 8px $shadow-dark-bottom;
+    }
+  }
+  .p-content__imgArea.-circle {
+    img {
+      border: 10px solid $base-dark-color;
+      box-shadow: 4px 4px 6px $shadow-dark-top, -4px -4px 8px $shadow-dark-bottom;
+    }
+  }
+  .c-card-icon__img {
+    box-shadow: inset 5px 5px 7px $shadow-dark-top, inset -5px -5px 7px $shadow-dark-bottom;
+  }
+  .c-card__item {
+    box-shadow: inset 7px 7px 9px $shadow-dark-top, inset -7px -7px 9px $shadow-dark-bottom;
+  }
+  .p-skill__item {
+    box-shadow: 5px 5px 9px $shadow-dark-top, -5px -5px 9px $shadow-dark-bottom;
+  }
+  .p-drawer {
+    background: $base-dark-color;
+  }
+  @include mq(md) {
+    .p-drawer {
+      background: transparent;
+    }
+  }
+}

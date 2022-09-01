@@ -1,0 +1,73 @@
+extends ../../layout/_main
+
+block append config
+  //- ===========================================
+  //-   ページの設定
+  //- ===========================================
+  -
+    const page = {
+      title: `florist | 作品一覧 | ${SITE_NAME}`,
+      description: '',
+      path: ROOT_PATH + 'work/florist/',
+      image: SITE_URL + '/assets/img/ogp.png',
+    }
+
+    const desc = {
+      category: 'Web Design',
+      name: 'オリジナルコーポレートサイト',
+      garally: [
+        'screen_flower01_pc.jpg',
+        'screen_flower02_pc.jpg',
+        'screen_flower03_pc.jpg',
+      ]
+    };
+
+    const contents = [
+      {
+        head: 'URL',
+        dd: [
+          {
+            url: 'https://florist.n-enu.me/',
+          }
+        ]
+      },
+      {
+        head: '概要',
+        text: '画像がコンテンツからはみ出るようなデザインや、SPとPCでコンテンツの順番を入れ替えたりするような組み方に挑戦してみようと思い作成しました。',
+      },
+      {
+        head: '使用ツール',
+        text: 'Figma / illustlator / Photoshop / HTML / CSS / javascript / webpack',
+      },
+      {
+        head: 'レスポンシブ',
+        text: '対応',
+      },
+      {
+        head: 'コンセプト',
+        text: '「日常に寄り添う」というコンセプトで作成しており、サイトを見た人が自分自信の日常の中に花を取り入れるイメージがしやすいよう意識しました。',
+      },
+      {
+        head: 'デザイン',
+        text: '初めてFigmaを使いコンポーネントやプロトタイプを作成。広いコンテンツと収まるコンテンツのメリハリを意識しました。花の切り抜きはPhotoshop、ロゴはIllustlatorというようにツールを使い分けながら作成しています。',
+      },
+      {
+        head: 'コーディング',
+        text: '画像の寄せ方やdisplay:contents;の使い方を改めて勉強しながら構築しました。初めてwebpackを使用したため、ディレクトリ構造や記述方法を確認しながら進めました。',
+      },
+      {
+        head: '制作期間',
+        text: '4日（ デザイン2日 / コーディング2日 ）',
+      },
+    ];
+
+block append head
+  //- ===========================================
+  //-   ページ用のスタイルやスクリプト
+  //- ===========================================
+
+block mainContent
+  //- ===========================================
+  //-   メインコンテンツ
+  //- ===========================================
+  include ../../include/_single

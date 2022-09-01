@@ -1,0 +1,53 @@
+extends ../../layout/_main
+
+block append config
+  //- ===========================================
+  //-   ページの設定
+  //- ===========================================
+  -
+    const page = {
+      title: `音楽サブスクバナー | ${SITE_NAME}`,
+      description: '',
+      path: ROOT_PATH + 'work/school-summer/',
+      image: SITE_URL + '/assets/img/ogp.png',
+    }
+
+    const desc = {
+      category: 'Banner',
+      name: '音楽サブスクバナー',
+      garally: [
+        'bnr_music_lg.png',
+        'bnr_music_md.png',
+        'bnr_music_sm.png',
+      ]
+    };
+
+    const contents = [
+      {
+        head: '概要',
+        text: '音楽サブスクのセールを想定したバナーを作成しました。',
+      },
+      {
+        head: '使用ツール',
+        text: 'illustlator / Photoshop',
+      },
+      {
+        head: 'デザイン',
+        text: 'ネオンのデザインを取り入れてみたくて制作しました。Illustlatorでパスを描きPhotoshopで加工しています。Webサイト等に配置した際に目に入りやすいようなデザインを意識しました。',
+      },
+      {
+        head: '制作期間',
+        text: '8時間',
+      },
+    ];
+
+block append head
+  //- ===========================================
+  //-   ページ用のスタイルやスクリプト
+  //- ===========================================
+
+block mainContent
+  //- ===========================================
+  //-   メインコンテンツ
+  //- ===========================================
+  include ../../include/_single

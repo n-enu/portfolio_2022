@@ -1,0 +1,44 @@
+@charset 'UTF-8';
+@use "../setting" as *;
+@use "../function" as *;
+
+// #を置換 svg アイコン
+@function url-friendly-color($color) {
+  @return "%23" + str-slice("#{$color}", 2, -1);
+}
+
+@mixin arw($color: $main-color, $width: 18, $height: 18) {
+  $color: url-friendly-color($color);
+  content: "";
+  display: inline-block;
+  width: $width + px;
+  height: $height + px;
+  transition: all 0.3s ease;
+  background: no-repeat center/contain;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20width%3D%2221%22%20height%3D%227%22%20viewBox%3D%220%200%2021%207%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M0%206H19L13.68%201%22%20stroke%3D%22#{$color}%22%2F%3E%3C%2Fsvg%3E");
+  vertical-align: middle;
+}
+
+@mixin moon($color: $yellow, $width: 20, $height: 20) {
+  $color: url-friendly-color($color);
+  content: "";
+  display: inline-block;
+  width: $width + px;
+  height: $height + px;
+  transition: all 0.3s ease;
+  background: no-repeat center/contain;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20height%3D%2248%22%20width%3D%2248%22%3E%3Cpath%20fill%3D%22#{$color}%22%20d%3D%22M24%2042q-7.5%200-12.75-5.25T6%2024q0-7.5%205.25-12.75T24%206q.4%200%20.85.025.45.025%201.15.075-1.8%201.6-2.8%203.95-1%202.35-1%204.95%200%204.5%203.15%207.65Q28.5%2025.8%2033%2025.8q2.6%200%204.95-.925T41.9%2022.3q.05.6.075.975Q42%2023.65%2042%2024q0%207.5-5.25%2012.75T24%2042Z%22%2F%3E%3C%2Fsvg%3E");
+  vertical-align: middle;
+}
+
+@mixin sun($color: #fff, $width: 20, $height: 20) {
+  $color: url-friendly-color($color);
+  content: "";
+  display: inline-block;
+  width: $width + px;
+  height: $height + px;
+  transition: all 0.3s ease;
+  background: no-repeat center/contain;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20height%3D%2248%22%20width%3D%2248%22%3E%3Cpath%20fill%3D%22#{$color}%22%20d%3D%22M24%2034q-4.15%200-7.075-2.925T14%2024q0-4.15%202.925-7.075T24%2014q4.15%200%207.075%202.925T34%2024q0%204.15-2.925%207.075T24%2034ZM3.5%2025.5q-.65%200-1.075-.425Q2%2024.65%202%2024q0-.65.425-1.075Q2.85%2022.5%203.5%2022.5h5q.65%200%201.075.425Q10%2023.35%2010%2024q0%20.65-.425%201.075-.425.425-1.075.425Zm36%200q-.65%200-1.075-.425Q38%2024.65%2038%2024q0-.65.425-1.075.425-.425%201.075-.425h5q.65%200%201.075.425Q46%2023.35%2046%2024q0%20.65-.425%201.075-.425.425-1.075.425ZM24%2010q-.65%200-1.075-.425Q22.5%209.15%2022.5%208.5v-5q0-.65.425-1.075Q23.35%202%2024%202q.65%200%201.075.425.425.425.425%201.075v5q0%20.65-.425%201.075Q24.65%2010%2024%2010Zm0%2036q-.65%200-1.075-.425-.425-.425-.425-1.075v-5q0-.65.425-1.075Q23.35%2038%2024%2038q.65%200%201.075.425.425.425.425%201.075v5q0%20.65-.425%201.075Q24.65%2046%2024%2046ZM12%2014.1l-2.85-2.8q-.45-.45-.425-1.075.025-.625.425-1.075.45-.45%201.075-.45t1.075.45L14.1%2012q.4.45.4%201.05%200%20.6-.4%201-.4.45-1.025.45-.625%200-1.075-.4Zm24.7%2024.75L33.9%2036q-.4-.45-.4-1.075t.45-1.025q.4-.45%201-.45t1.05.45l2.85%202.8q.45.45.425%201.075-.025.625-.425%201.075-.45.45-1.075.45t-1.075-.45ZM33.9%2014.1q-.45-.45-.45-1.05%200-.6.45-1.05l2.8-2.85q.45-.45%201.075-.425.625.025%201.075.425.45.45.45%201.075t-.45%201.075L36%2014.1q-.4.4-1.025.4-.625%200-1.075-.4ZM9.15%2038.85q-.45-.45-.45-1.075t.45-1.075L12%2033.9q.45-.45%201.05-.45.6%200%201.05.45.45.45.45%201.05%200%20.6-.45%201.05l-2.8%202.85q-.45.45-1.075.425-.625-.025-1.075-.425Z%22%2F%3E%3C%2Fsvg%3E");
+  vertical-align: middle;
+}

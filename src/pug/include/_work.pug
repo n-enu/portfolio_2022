@@ -1,0 +1,83 @@
+-
+  const works = [
+    {
+      category: 'web',
+      title: 'ポートフォリオサイト',
+      design: 'XD / After Effects',
+      coding: 'HTML / CSS / Javascript / webpack',
+      img: 'thumb_portfolio_dark.jpg',
+      link: '/work/portfolio/'
+    },
+    {
+      category: 'web',
+      title: 'オリジナルサイト',
+      design: 'XD / Photoshop',
+      coding: 'HTML / CSS / Javascript / PHP / Wordpress',
+      img: 'thumb_company.jpg',
+      link: '/work/comparison/'
+    },
+    {
+      category: 'web',
+      title: 'オリジナルサイト',
+      design: 'Figma / Photoshop / illustlator',
+      coding: 'HTML / CSS / Javascript / webpack',
+      img: 'thumb_flower.jpg',
+      link: '/work/florist/'
+    },
+    {
+      category: 'graphic',
+      title: 'A4フライヤー',
+      design: 'Photoshop / illustlator',
+      img: 'thumb_flyer01.jpg',
+      link: '/work/school-stairs/'
+    },
+    {
+      category: 'graphic',
+      title: 'A4フライヤー',
+      design: 'Photoshop / illustlator',
+      img: 'thumb_flyer02.jpg',
+      link: '/work/school-future/'
+    },
+    {
+      category: 'graphic',
+      title: 'A4フライヤー',
+      design: 'Photoshop / illustlator',
+      img: 'thumb_flyer03.jpg',
+      link: '/work/school-summer/'
+    },
+    {
+      category: 'banner',
+      title: 'バナー',
+      design: 'Photoshop / illustlator',
+      img: 'bnr_music_md.png',
+      link: '/work/music/'
+    },
+    {
+      category: 'banner',
+      title: 'バナー',
+      design: 'Photoshop / illustlator',
+      img: 'bnr_rain_md.png',
+      link: '/work/rain/'
+    },
+    {
+      category: 'banner',
+      title: 'バナー',
+      design: 'Photoshop / illustlator',
+      img: 'bnr_sports_md.png',
+      link: '/work/sports/'
+    },
+  ];
+
+.c-card
+  .js-category-list.c-card__list
+    each work in works
+      article.c-card__item(data-category=work.category)
+        p.c-card__head #{work.title}
+        ul.c-card__desc
+          if work.design
+            li.c-card__desc-item Design : #{work.design}
+          if work.coding
+            li.c-card__desc-item Coding : #{work.coding}
+        figure.c-card__img: img(src=`/assets/img/work/${work.img}`, alt="")
+        p.c-card__btn.c-button.c-button-radius
+          a.c-button-radius__text(href=work.link) View

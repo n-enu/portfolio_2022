@@ -1,0 +1,15 @@
+@charset 'UTF-8';
+@use "sass:math";
+@use "../global" as *;
+
+/*
+  Header
+-----------------------------------------------------*/
+.l-header {
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  right: 0;
+  left: 0;
+  transition: background-color 0.5s;
+}

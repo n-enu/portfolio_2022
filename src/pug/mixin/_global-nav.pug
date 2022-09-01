@@ -1,0 +1,6 @@
+mixin globalNav(items, current)
+  ul.p-globalNav
+    each item in items
+
+      li.p-globalNav__item.c-button.c-button-radius
+        a.js-navBtn.c-button-radius__text(href=item.path, lang="en") #{item.name}

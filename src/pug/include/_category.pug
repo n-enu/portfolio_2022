@@ -1,0 +1,25 @@
+-
+  const categories = [
+    {
+      data: 'all',
+      name: 'All',
+    },
+    {
+      data: 'web',
+      name: 'Web Design',
+    },
+    {
+      data: 'banner',
+      name: 'Banner',
+    },
+    {
+      data: 'graphic',
+      name: 'Graphic Design',
+    },
+  ];
+
+.p-category.-small
+  .js-category-btn.p-category__list
+    each category in categories
+      button.c-button.p-category__item.c-button-radius(type="button", lang="en")
+        span.c-button-radius__text.-small(data-filter=category.data) #{category.name}

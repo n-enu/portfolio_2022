@@ -1,0 +1,43 @@
+@charset 'UTF-8';
+@use "sass:math";
+@use "../../global" as *;
+
+/*
+  contact
+*/
+.p-contact {
+  position: relative;
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 70%;
+    height: 100%;
+    opacity: 0.9;
+    background: #b59e9f;
+  }
+  &__img {
+    z-index: -1;
+    object-fit: cover;
+  }
+  &__head {
+    margin-bottom: pxToRem(8px);
+    font-size: pxToRem(24px);
+  }
+  &__text {
+    font-size: pxToRem(13px);
+    line-height: 1.8;
+  }
+  &__areaText {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70%;
+    padding: pxToRem(34px) pxToRem(20px);
+    color: #fff;
+  }
+}

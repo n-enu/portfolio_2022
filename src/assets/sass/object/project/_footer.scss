@@ -1,0 +1,27 @@
+@charset 'UTF-8';
+@use "sass:math";
+@use "../../global" as *;
+
+/*
+  Footer
+*/
+.p-footer {
+  margin-top: pxToRem(40px);
+  &__cr {
+    padding: pxToRem(4px);
+    background: $main-color;
+    color: #fff;
+    font-size: pxToRem(11px);
+    text-align: center;
+  }
+  @include mq(md) {
+    margin-top: pxToRem(80px);
+    &__cr {
+      padding: pxToRem(6px);
+      font-size: pxToRem(12px);
+    }
+  }
+  @include mq(lg) {
+    margin-top: pxToRem(120px);
+  }
+}

@@ -1,0 +1,30 @@
+@charset 'UTF-8';
+@use "sass:math";
+@use "../../global" as *;
+/*
+  Global Nav
+*/
+.p-globalNav {
+  text-align: center;
+  &__item {
+    width: 70%;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    & + & {
+      margin-top: pxToRem(40px);
+    }
+  }
+  @include mq(md) {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 60px;
+    &__item {
+      width: auto;
+      margin-left: pxToRem(20px);
+      & + & {
+        margin-top: 0;
+      }
+    }
+  }
+}

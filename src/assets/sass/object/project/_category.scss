@@ -1,0 +1,21 @@
+@charset 'UTF-8';
+@use "sass:math";
+@use "../../global" as *;
+
+/*
+  category
+*/
+.p-category {
+  margin-bottom: pxToRem(38px);
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px 14px;
+  }
+  @include mq(md) {
+    margin-bottom: pxToRem(48px);
+    &__list {
+      justify-content: center;
+    }
+  }
+}

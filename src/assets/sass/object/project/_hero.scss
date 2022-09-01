@@ -1,0 +1,72 @@
+@charset 'UTF-8';
+@use "sass:math";
+@use "../../global" as *;
+
+/*
+  Hero
+*/
+.p-hero {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  &__content {
+    position: relative;
+    height: 100vh;
+  }
+  &__copy {
+    padding-top: pxToRem(100px);
+    &-en {
+      display: block;
+      box-sizing: border-box;
+      width: 100%;
+      color: $base-color;
+      font-size: pxToRem(50px);
+      font-weight: bold;
+      text-shadow: 2px 2px 4px #c7c6c5, -3px -3px 4px #fff;
+    }
+    &-ja {
+      margin-top: pxToRem(4px);
+      padding-left: pxToRem(4px);
+      color: $secondary-text-color;
+      font-size: pxToRem(14px);
+    }
+  }
+  &__animation {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    box-sizing: border-box;
+    width: 100%;
+    transform: translateX(-50%);
+  }
+  @include mq(md) {
+    height: calc(100vh - 80px);
+    &__copy {
+      position: absolute;
+      top: 20%;
+      left: 0;
+      padding-top: 0;
+      &-en {
+        font-size: pxToRem(80px);
+        text-shadow: 2px 2px 4px #c7c6c5, -3px -3px 4px #fff;
+      }
+      &-ja {
+        padding-left: pxToRem(4px);
+        font-size: pxToRem(16px);
+      }
+    }
+    &__animation {
+      top: 50%;
+      bottom: auto;
+      max-width: 500px;
+      transform: translateX(0) translateY(-50%);
+    }
+  }
+  @include mq(lg) {
+    &__copy {
+      &-en {
+        font-size: pxToRem(94px);
+      }
+    }
+  }
+}

@@ -1,0 +1,65 @@
+@charset 'UTF-8';
+@use "sass:math";
+@use "../../global" as *;
+
+/*
+  head-primary
+*/
+.c-head-primary {
+  display: block;
+  margin-bottom: pxToRem(32px);
+  font-size: pxToRem(22px);
+  line-height: 1.5;
+  text-align: center;
+  &__icon {
+    display: inline-block;
+    position: relative;
+    top: pxToRem(2px);
+    margin-right: pxToRem(6px);
+    img {
+      width: pxToRem(22px);
+      height: pxToRem(22px);
+      vertical-align: baseline;
+    }
+  }
+  @include mq(md) {
+    margin-bottom: pxToRem(46px);
+    text-align: left;
+  }
+  @include mq(lg) {
+    margin-bottom: pxToRem(64px);
+  }
+  @include mq(xxl) {
+    // margin-bottom: pxToRem(32px);
+  }
+}
+
+/*
+  head-secondary
+*/
+.c-head-secondary {
+  margin-bottom: pxToRem(20px);
+  text-align: center;
+  &__cat {
+    display: inline-block;
+    margin-bottom: pxToRem(12px);
+    padding-bottom: pxToRem(3px);
+    border-bottom: 1px solid $primary-text-color;
+    font-size: pxToRem(13px);
+  }
+  &__main {
+    font-size: pxToRem(16px);
+    line-height: 1.5;
+  }
+  @include mq(md) {
+    margin-bottom: pxToRem(32px);
+    &__cat {
+      margin-bottom: pxToRem(16px);
+      font-size: pxToRem(14px);
+    }
+    &__main {
+      font-size: pxToRem(18px);
+      line-height: 1.5;
+    }
+  }
+}

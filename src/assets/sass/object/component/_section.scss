@@ -1,0 +1,39 @@
+@charset 'UTF-8';
+@use "sass:math";
+@use "../../global" as *;
+
+/*
+  section
+*/
+.c-section {
+  position: relative;
+  padding-top: pxToRem(80px);
+  &:first-of-type {
+    padding-top: pxToRem(40px);
+  }
+  &.-pt0 {
+    padding-top: 0;
+  }
+  @include mq(md) {
+    position: relative;
+    padding-top: pxToRem(100px);
+    &:first-of-type {
+      padding-top: pxToRem(50px);
+    }
+    &.-pt0 {
+      padding-top: 0;
+    }
+  }
+  @include mq(lg) {
+    padding-top: pxToRem(120px);
+    &:first-of-type {
+      padding-top: pxToRem(60px);
+    }
+    &.-pt0 {
+      padding-top: 0;
+    }
+  }
+  @include mq(xxl) {
+    padding-top: pxToRem(150px);
+  }
+}
