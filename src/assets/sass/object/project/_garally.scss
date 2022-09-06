@@ -9,26 +9,25 @@
   position: relative;
   max-width: 600px;
   margin: 0 auto;
-  // &__list {
-  //   height: 40vw;
-  //   min-height: 264px;
-  //   max-height: 264px;
-  // }
+  .swiper-wrapper {
+    height: 40vw;
+  }
   &__item {
     display: flex;
+    position: relative;
     align-items: flex-start;
     justify-content: center;
     img {
-      // display: inline;
-      // align-self: center;
-      // width: auto;
-      // max-width: 100%;
-      // max-height: 100%;
+      display: inline;
+      align-self: center;
+      width: auto;
+      max-width: 100%;
+      max-height: 100%;
     }
   }
   @include mq(md) {
     &__list {
-      // max-height: 450px;
+      max-height: 500px;
     }
   }
 }
