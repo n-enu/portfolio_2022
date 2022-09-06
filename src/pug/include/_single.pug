@@ -27,7 +27,8 @@ section.c-section
               
               if e.smallText
                 p.p-desc__text #{e.text}
-                p.p-desc__text.-small #{e.smallText}
+                p.p-desc__text.-small
+                  a(href=e.smallText, target="_blank", rel="noopener noreferrer") #{e.smallText}
 
             
           if content.text
