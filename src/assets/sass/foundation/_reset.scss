@@ -182,35 +182,6 @@ body {
       overflow-y: visible;
     }
   }
-
-  &::after {
-    content: "";
-    position: fixed;
-    z-index: 10;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    animation: fadeOut 1s $easing 3s 1 both;
-    background-color: #fff;
-
-    .is-useJs & {
-      animation: none;
-    }
-    .is-loaded & {
-      visibility: hidden;
-      transform: translate3d(-5%, 0, 0) scale3d(0, 1, 1);
-      transform-origin: left center;
-      transition-property: transform, visibility;
-      transition-duration: 0.8s, 0.1s;
-      transition-timing-function: $easing-cut;
-      transition-delay: 0.5s, 1.5s;
-      pointer-events: none;
-      will-change: transform;
-    }
-  }
 }
 
 /*
@@ -459,23 +430,6 @@ template,
 ::before:focus:not(:focus-visible),
 ::after:focus:not(:focus-visible) {
   outline: none;
-}
-
-/**
- * Prettier ignore
- */
-@media (prefers-reduced-motion: reduce) {
-  *,
-  ::before,
-  ::after {
-    transition-duration: 1ms !important;
-    transition-delay: 0s !important;
-    animation-duration: 1ms !important;
-    animation-delay: -1ms !important;
-    animation-iteration-count: 1 !important;
-    background-attachment: initial !important;
-    scroll-behavior: auto !important;
-  }
 }
 
 /**

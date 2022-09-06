@@ -4,7 +4,6 @@ import objectFitImages from "object-fit-images";
 objectFitImages();
 
 // Libraly
-import Loading from "./lib/Loading";
 import $ from "jquery";
 import toggle from "./lib/Toggle";
 import Switch from "./lib/Switch";
@@ -12,7 +11,6 @@ import NavBtn from "./lib/NavBtn";
 import Swiper from "swiper/bundle";
 import lottie from "lottie-web";
 
-new Loading();
 new toggle(".js-drawer");
 new Switch();
 new NavBtn();
