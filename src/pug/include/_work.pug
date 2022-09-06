@@ -11,18 +11,18 @@
     {
       category: 'web',
       title: 'オリジナルサイト',
-      design: 'XD / Photoshop',
-      coding: 'HTML / CSS / Javascript / PHP / Wordpress',
-      img: 'thumb_company.jpg',
-      link: '/work/comparison/'
+      design: 'Figma / Photoshop / illustlator / After Effects',
+      coding: 'HTML / CSS / Javascript / webpack',
+      img: 'thumb_flower.jpg',
+      link: '/work/florist/'
     },
     {
       category: 'web',
       title: 'オリジナルサイト',
-      design: 'Figma / Photoshop / illustlator',
-      coding: 'HTML / CSS / Javascript / webpack',
-      img: 'thumb_flower.jpg',
-      link: '/work/florist/'
+      design: 'XD / Photoshop',
+      coding: 'HTML / CSS / Javascript / PHP / Wordpress',
+      img: 'thumb_company.jpg',
+      link: '/work/comparison/'
     },
     {
       category: 'graphic',
@@ -75,9 +75,9 @@
         p.c-card__head #{work.title}
         ul.c-card__desc
           if work.design
-            li.c-card__desc-item Design : #{work.design}
+            li.c-card__desc-item #[span.c-card__desc-head Design] : #{work.design}
           if work.coding
-            li.c-card__desc-item Coding : #{work.coding}
+            li.c-card__desc-item #[span.c-card__desc-head Coding] : #{work.coding}
         figure.c-card__img: img(src=`/assets/img/work/${work.img}`, alt="")
         p.c-card__btn.c-button.c-button-radius
           a.c-button-radius__text(href=work.link) View
