@@ -9,7 +9,7 @@ section.c-section
         ul.p-garally__list.swiper-wrapper
           each item in desc.garally
             li.p-garally__item.swiper-slide
-              img(src=`/assets/img/work/${item}`)
+              img(src=`/assets/img/work/${item}.png` srcset=`/assets/img/work/${item}.png 1x, /assets/img/work/${item}@2x.png 2x`)
       .swiper-pagination
       .swiper-button-prev
       .swiper-button-next
