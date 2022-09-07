@@ -2,63 +2,53 @@
   const skills = [ 
     {
       title: 'HTML',
-      text: '基本的なコーディングができます。色んな事に配慮できるよう勉強し続けたいです。このサイトはpugで作成しました。',
+      text: '基本的なコーディングができます。このサイトはpugを勉強しながらpugで作成しました。',
       class: 'html',
-      level: '5'
     },
     {
       title: 'CSS',
       text: 'レスポンシブサイトの構築ができます。前職ではSCSSを使用し、gulpでコンパイルしていました。',
       class: 'css',
-      level: '5'
     },
     {
       title: 'Javascript',
       text: '複雑なコードを書くことはできませんが、ライブラリの実装や調整が可能です。前職ではjQueryも使用していました。',
       class: 'js',
-      level: '4'
     },
     {
       title: 'Wordpress',
-      text: '基本的なテーマの構築ができます。基礎の強化とカスタマイズの考え方や技術を勉強したいと思っています。',
+      text: 'カスタム投稿・カスタムフィールド・お問い合わせフォーム等の基本的なテーマの構築ができます。',
       class: 'wp',
-      level: '4'
     },
     {
       title: 'Git',
-      text: '前職ではBitbucket、GUIはSourceTreeを使用していました。コマンドに憧れ少しずつ使い始めました。',
+      text: '前職ではBitbucket、GUIはSourceTreeを使用していました。コマンドに憧れ最近少しずつ使い始めました。',
       class: 'git',
-      level: '4'
     },
     {
       title: 'Illustlator',
       text: '職業訓練で学び基本的な操作ができます。主にグラフィックの作品制作で使用しました。',
       class: 'illustlator',
-      level: '3'
     },
     {
       title: 'Photoshop',
       text: '職業訓練で学び基本的な操作ができます。前職ではPhotoshopのデザインからコーディングすることがほとんどでした。',
       class: 'photoshop',
-      level: '3'
     },
     {
       title: 'XD',
       text: '独学ですが、個人的によく使用しているアプリケーションなので基本的な操作が可能です。',
       class: 'xd',
-      level: '4'
     },
     {
       title: 'Figma',
       text: '日本語対応を機に使用してみました。基本的な操作やプロトタイプ作成が可能です。',
       class: 'figma',
-      level: '3'
     },
     {
       title: 'After Effects',
-      text: 'Lottieアニメーションに興味を持ちローディング作成などに使用してみました。',
+      text: 'Lottieアニメーションに興味を持ち、ローディング作成などに使用してみました。',
       class: 'ae',
-      level: '1'
     },
   ];
 
@@ -66,7 +56,7 @@
   ul.p-skill__list
     each skill in skills
       li.p-skill__item
-        div(class=`p-skill__img -${skill.class} -height${skill.level}`)
+        div(class=`p-skill__img -${skill.class}`)
           span.p-skill__icon: img(src=`/assets/img/common/icon_${skill.class}.svg`, alt="")
         .p-skill__textArea
           h3.p-skill__head(lang="en") #{skill.title}

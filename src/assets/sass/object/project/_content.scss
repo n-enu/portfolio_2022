@@ -31,6 +31,9 @@
   &__text {
     font-size: pxToRem(14px);
     line-height: 2;
+    & + & {
+      margin-top: 1em;
+    }
   }
   & + & {
     margin-top: pxToRem(40px);

@@ -102,11 +102,12 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: pxToRem(20px) pxToRem(16px);
+    margin: 0 pxToRem(-5px) pxToRem(-20px);
   }
   &__item {
     box-sizing: border-box;
-    width: calc(50% - pxToRem(8px));
+    width: calc(50% - pxToRem(10px));
+    margin: 0 pxToRem(5px) pxToRem(20px);
   }
   &__img {
     display: flex;
@@ -129,10 +130,11 @@
   }
   @include mq(md) {
     &__list {
-      gap: pxToRem(20px) pxToRem(20px);
+      margin: 0 pxToRem(-10px);
     }
     &__item {
-      width: calc(25% - pxToRem(20px));
+      width: calc(20% - pxToRem(20px));
+      margin: 0 pxToRem(10px);
     }
     &__img {
       margin-bottom: pxToRem(20px);
@@ -142,11 +144,8 @@
     }
   }
   @include mq(lg) {
-    &__list {
-      gap: pxToRem(40px) pxToRem(40px);
-    }
     &__item {
-      width: calc(25% - pxToRem(40px));
+      width: calc(20% - pxToRem(40px));
     }
     &__text {
       font-size: pxToRem(15px);
