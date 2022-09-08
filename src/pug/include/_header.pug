@@ -3,7 +3,7 @@ header.js-header.l-header.p-header
   button.js-drawer.p-hamburger(type="button", aria-controls="globalNav", aria-expanded="false")
     span.p-hamburger__line
       span.u-visuallyHidden メニューを開閉
-  nav.p-drawer
+  nav#globalNav.p-drawer
     h2.u-visuallyHidden メニュー
     +globalNav(items, page.path)
   p.p-header__dark

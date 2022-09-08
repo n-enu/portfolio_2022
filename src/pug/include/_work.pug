@@ -72,7 +72,7 @@
   .js-category-list.c-card__list
     each work in works
       article.c-card__item(data-category=work.category)
-        p.c-card__head #{work.title}
+        h3.c-card__head #{work.title}
         ul.c-card__desc
           if work.design
             li.c-card__desc-item #[span.c-card__desc-head Design] : #{work.design}
