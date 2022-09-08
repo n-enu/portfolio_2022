@@ -98,6 +98,7 @@
   Card-icon
 */
 .c-card-icon {
+  margin-top: pxToRem(40px);
   &__list {
     display: flex;
     flex-wrap: wrap;
@@ -129,6 +130,7 @@
     line-height: 1.8;
   }
   @include mq(md) {
+    margin-top: pxToRem(80px);
     &__list {
       margin: 0 pxToRem(-10px);
     }

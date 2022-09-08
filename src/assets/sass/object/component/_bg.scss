@@ -1,0 +1,20 @@
+@charset 'UTF-8';
+@use "sass:math";
+@use "../../global" as *;
+
+/*
+  bg
+*/
+.c-bg {
+  width: 100%;
+  height: 200px;
+  margin-bottom: pxToRem(30px);
+  background-image: url("../img/common/img_music04.jpg");
+  background-size: cover;
+  @include mq(md) {
+    height: 350px;
+    margin-bottom: pxToRem(60px);
+    background-attachment: fixed;
+    background-size: 50%;
+  }
+}

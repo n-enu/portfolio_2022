@@ -9,6 +9,7 @@
 .p-content {
   &__imgArea {
     margin: 0 auto;
+    padding-top: pxToRem(20px);
     text-align: center;
     &.-circle {
       img {
@@ -18,9 +19,6 @@
         box-shadow: 4px 4px 6px #b6b9be, -4px -4px 8px #fff;
       }
     }
-  }
-  &__textArea {
-    padding-top: pxToRem(20px);
   }
   &__head {
     margin-bottom: pxToRem(16px);
@@ -38,15 +36,32 @@
   & + & {
     margin-top: pxToRem(40px);
   }
+  &.-reverse {
+    display: flex;
+    flex-direction: column;
+    .p-content__imgArea {
+      order: 1;
+      padding-top: 0;
+    }
+    .p-content__textArea {
+      order: 2;
+      padding-top: pxToRem(20px);
+    }
+  }
+  &.-mt {
+    margin-top: pxToRem(40px);
+  }
   @include mq(md) {
     display: flex;
     &__imgArea {
+      box-sizing: border-box;
       width: 50%;
       margin: 0;
     }
     &__textArea {
+      box-sizing: border-box;
       width: 50%;
-      padding: 0 0 0 pxToRem(20px);
+      padding: 0 pxToRem(40px) 0 0;
     }
     &__head {
       margin-bottom: pxToRem(17px);
@@ -59,15 +74,16 @@
       margin-top: pxToRem(80px);
     }
     &.-reverse {
-      .p-content__imgArea {
-        order: 2;
-      }
+      flex-direction: row;
       .p-content__textArea {
-        padding: 0 pxToRem(20px) 0 0;
+        padding: 0 0 0 pxToRem(40px);
       }
     }
     &.-center {
       align-items: center;
+    }
+    &.-mt {
+      margin-top: pxToRem(80px);
     }
   }
   @include mq(lg) {

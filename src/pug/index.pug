@@ -30,7 +30,7 @@ block mainContent
           p.p-hero__copy-ja はじめまして、イタノナオです。
         .p-hero__animation
           #js-animation-mv.p-animation-mv
-  // hero
+  // /.hero
 
   section#about.c-section.-pt0
     .l-container
@@ -38,20 +38,21 @@ block mainContent
         span.c-head-primary__icon
           img(src="/assets/img/common/icon_about.svg", alt="")
         | About
-      .p-content.c-section
+      .p-content.-reverse
+        .p-content__textArea
+          h3.p-content__head イタノナオ
+          p.p-content__text 1990年3月20日生まれ、京都市在住。
+          p.p-content__text 見た目だけでは分からないコーディングの奥深さに興味を持ち、Web制作の世界に飛び込みました。
+          p.p-content__text 良いものを作るにはどうすれば良いかを考え提案し、制作物への愛着を持ってコーディングができるようなエンジニアを目指しています。
+          p.p-content__text 少しブランクがあるので、改めて基礎を学びながらも新しい事に挑戦していきたいと思っています。
         .p-content__imgArea.-circle
           img(src="https://placehold.jp/9bb6d9/9bb6d9/400x400.png?text=image", alt="")
-        .p-content__textArea
-          p.p-content__head イタノナオ
-          p.p-content__text 1990年3月20日生まれ、京都市在住。
-          p.p-content__text 見た目だけでは分からないWeb制作の奥深さに興味を持ち、この世界に飛び込みました。
-          p.p-content__text デザインを再現するだけでなく中身にもこだわりを持つこと、そして更に良いものを作るにはどうすれば良いか提案し、制作物への愛着を持ってコーディングができるようなエンジニアを目指しています。
       
-      .c-card-icon.c-section
+      .c-card-icon
         ul.c-card-icon__list
           li.c-card-icon__item
             .c-card-icon__img: img(src="/assets/img/common/icon_music.svg", alt="")
-            p.c-card-icon__text 学生時代は吹奏楽・バンドと音楽に没頭。
+            p.c-card-icon__text 学生時代は音楽に没頭しライブハウスでアルバイト。
           li.c-card-icon__item
             .c-card-icon__img: img(src="/assets/img/common/icon_egg.svg", alt="")
             p.c-card-icon__text 元おむらいす屋さん。大学卒業後約6年間働く。
@@ -60,17 +61,18 @@ block mainContent
             p.c-card-icon__text 前職はWeb制作会社で約1年半コーディングを経験。
           li.c-card-icon__item
             .c-card-icon__img: img(src="/assets/img/common/icon_holiday.svg", alt="")
-            p.c-card-icon__text ひと休み。好きなことをする。
+            p.c-card-icon__text ひと休み。ただ好きなことをする。
           li.c-card-icon__item
             .c-card-icon__img: img(src="/assets/img/common/icon_design.svg", alt="")
             p.c-card-icon__text Web制作全般に興味を持ち職業訓練校に通う。
 
-        .p-content.-reverse.-center
+        section.p-content.-center.-mt
+          .p-content__textArea
+            h3.p-content__head 最近のこと
+            p.p-content__text After Effectsの操作を学びながらアニメーションを制作しました。Lottieで実装しています。
           .p-content__imgArea
             #js-animation-hanabi
-          .p-content__textArea
-            p.p-content__text 新しい事を取り入れようと思い、After Effectsの操作を学びながらアニメーションを制作しました。Lottieで実装しています。
-  // about
+  // /#about
 
   section#work.c-section
     .l-container
@@ -80,9 +82,7 @@ block mainContent
         | Work
       include include/_category
       include include/_work
-
-      
-  // work
+  // /#work
 
   section#skill.c-section
     .l-container
@@ -92,10 +92,26 @@ block mainContent
         | Skill
       
       include include/_skill
-  // skill
+  // /#skill
+
+  section#like.c-section
+    .c-bg
+    .l-container
+      h2.c-head-primary(lang="en")
+        span.c-head-primary__icon
+          img(src="/assets/img/common/icon_skill.svg", alt="")
+        | Like
+      section.p-content
+        .p-content__textArea
+          h3.p-content__head 音が好き
+          p.p-content__text 吹奏楽やバンド活動の経験から、音楽を聴くのも演奏するのも好きです。
+          p.p-content__text 音楽だけでなく生活音や環境音に耳を澄ますのも好きで、音を聞き分けることや耳コピが得意です。
+          p.p-content__text Cubaseというソフトを使って時々家で録音したりもしています。趣味はピッチ補正。
+        .p-content__imgArea
+          img(src="/assets/img/common/img_music.jpg", alt="バンドで撮影したMVの画像")
 
   section#contact.c-section
-   .l-container
+    .l-container
       h2.c-head-primary(lang="en")
         span.c-head-primary__icon
           img(src="/assets/img/common/icon_contact.svg", alt="")
@@ -107,4 +123,4 @@ block mainContent
             img(src="/assets/img/common/icon_contact.svg", alt="")
           | np10320@gmail.com
 
-  // Contact
+  // /#contact
