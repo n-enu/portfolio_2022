@@ -9,7 +9,7 @@ block append config
       title: `${SITE_NAME}`,
       description: '',
       path: ROOT_PATH,
-      image: SITE_URL + '/assets/img/ogp.png'
+      image: SITE_URL + '/assets/img/common/ogp.png'
     }
 
 block append head
@@ -32,7 +32,16 @@ block mainContent
           #js-animation-mv.p-animation-mv
   // /.hero
 
-  section#about.c-section.-pt0
+  #sound.c-section.-pt0
+    .l-container
+      audio#rain(src="/assets/sound/rain.mp3")
+      p.c-btn-sound
+        button(type="button") a
+      .box
+      .bob
+  // /.sound
+
+  section#about.c-section
     .l-container
       h2.c-head-primary(lang="en")
         span.c-head-primary__icon

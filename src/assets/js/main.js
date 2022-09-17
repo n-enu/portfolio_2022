@@ -10,10 +10,20 @@ import Switch from "./lib/Switch";
 import NavBtn from "./lib/NavBtn";
 import Swiper from "swiper/bundle";
 import lottie from "lottie-web";
+import { gsap } from "gsap";
 
 new Toggle(".js-drawer");
 new Switch();
 new NavBtn();
+
+// アニメーションの対象を取得
+const box = document.querySelector(".box");
+const bob = document.querySelector(".bob");
+
+// to 第一引数：誰に第二引数：オブジェクト内にアニメーション定義
+gsap.set([box, bob], {
+  x: 100,
+});
 
 /* ==============================
 		Swiper
