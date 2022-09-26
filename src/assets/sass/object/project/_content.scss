@@ -90,5 +90,8 @@
     & + & {
       margin-top: pxTooRem(100px);
     }
+    &.-mt {
+      margin-top: pxToRem(100px);
+    }
   }
 }

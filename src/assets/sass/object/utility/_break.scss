@@ -25,4 +25,10 @@
       display: none;
     }
   }
+  &.-lg {
+    display: none;
+    @include mq(lg) {
+      display: inline-block;
+    }
+  }
 }

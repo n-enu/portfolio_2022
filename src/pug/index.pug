@@ -22,84 +22,122 @@ block mainContent
   //- ===========================================
   //-   メインコンテンツ
   //- ===========================================
-  .p-hero
-    .l-container
-      .p-hero__content 
-        .p-hero__copy
-          p.p-hero__copy-en Nao Itano
-          p.p-hero__copy-ja はじめまして、イタノナオです。
-        .p-hero__animation
-          #js-animation-mv.p-animation-mv
+  .l-animation-content
+    .p-hero
+      .p-hero__content
+        p.js-anime-name.p-hero__content-name N's#[br]PORTFOLIO SITE
+        //- .circle.circle-large.-base
+        .p-hero__content-area
+          .p.p-hero__content-copy はじめまして、イタノナオです。
+          .p.p-hero__content-copy 見た目だけでは分からないコーディングの奥深さに興味を持ち、Web制作の世界に飛び込みました。
+          .p.p-hero__content-copy あらゆることに配慮できる"やさしいエンジニア"を目指し日々勉強しています。
+        .textBg
+        .js-fuwa.circle.circle01
+        .js-fuwa.circle.circle02
+        .js-fuwa.circle.circle03
+        .circle.circle-large.-blue
+              
   // /.hero
-
-  #sound.c-section.-pt0
-    .l-container
-      audio#rain(src="/assets/sound/rain.mp3")
-      p.c-btn-sound
-        button(type="button") a
-      .box
-      .bob
-  // /.sound
 
   section#about.c-section
     .l-container
       h2.c-head-primary(lang="en")
-        span.c-head-primary__icon
-          img(src="/assets/img/common/icon_about.svg", alt="")
-        | About
-      .p-content.-reverse
-        .p-content__textArea
-          h3.p-content__head イタノナオ
-          p.p-content__text 1990年3月20日生まれ、京都市在住。
-          p.p-content__text 見た目だけでは分からないコーディングの奥深さに興味を持ち、Web制作の世界に飛び込みました。
-          p.p-content__text より良いものを作るために考え提案し、制作物への愛着を持ってコーディングができるようなエンジニアを目指しています。
-          p.p-content__text 少しブランクがあるので、改めて基礎を学びながらも新しい事に挑戦していきたいと思っています。
-        .p-content__imgArea.-circle
-          img(src="https://placehold.jp/9bb6d9/9bb6d9/400x400.png?text=image", alt="")
+        span.js-splitTextWrap.c-head-primary__in About
+      .p-grid
+        .js-bubbleText.p-grid__bubble.u-break.-lg(aria-hidden="true") 私はこんな人です
+        dl.p-grid__item
+          dt.js-bubbleTitle イタノナオ
+          dd.js-bubbleDesc 菜穂と書いてなおと読みます
+        dl.p-grid__item
+          dt.js-bubbleTitle 1990年3月20日生まれ
+          dd.js-bubbleDesc 春分の日だったり平日だったりします
+        dl.p-grid__item
+          dt.js-bubbleTitle 京都府京都市出身
+          dd.js-bubbleDesc 今も京都に住んでいます
+        dl.p-grid__item
+          dt.js-bubbleTitle 身長152cm
+          dd.js-bubbleDesc 猫背を治そうと頑張ってます
+        dl.p-grid__item
+          dt.js-bubbleTitle 趣味：音楽・ゲーム
+          dd.js-bubbleDesc 最近はスプラトゥーン一筋です
+        dl.p-grid__item
+          dt.js-bubbleTitle 特技：耳コピ・ピッチ補正
+          dd.js-bubbleDesc 音を聴くのが好きです
+        dl.p-grid__item
+          dt.js-bubbleTitle 猫を飼ってみたい
+          dd.js-bubbleDesc 犬とうさぎは実家で飼ってました
+        dl.p-grid__item
+          dt.js-bubbleTitle インドア
+          dd.js-bubbleDesc 誘われたら割とどこでも行くタイプのインドアです
+        dl.p-grid__item
+          dt.js-bubbleTitle 写真に興味がある
+          dd.js-bubbleDesc カメラを持って出かけてみたいです
+        dl.p-grid__item
+          dt.js-bubbleTitle 甘いもの好き
+          dd.js-bubbleDesc 何でも食べますが固いプリンが一番です
+        dl.p-grid__item
+          dt.js-bubbleTitle 人の話を聞くのが好き
+          dd.js-bubbleDesc 接客の仕事をして更に好きになりました
+        dl.p-grid__item
+          dt.js-bubbleTitle 平和主義
+          dd.js-bubbleDesc 平和が一番、でもこだわりはあります
+        dl.p-grid__item
+          dt.js-bubbleTitle UVレジンはじめました
+          dd.js-bubbleDesc アクセサリーなどを作っています
+        dl.p-grid__item
+          dt.js-bubbleTitle コーディングが好き
+          dd.js-bubbleDesc 最近フロントエンドの勉強が楽しいです
+        dl.p-grid__item.-img 
+          img(src="/assets/img/common/profile_color03.png", alt="")
       
       .c-card-icon
         ul.c-card-icon__list
           li.c-card-icon__item
-            .c-card-icon__img: img(src="/assets/img/common/icon_music.svg", alt="")
+            .c-card-icon__img: img.js-cardIcon(src="/assets/img/common/icon_music.svg", alt="")
             p.c-card-icon__text 学生時代は音楽に没頭しライブハウスでアルバイト。
           li.c-card-icon__item
-            .c-card-icon__img: img(src="/assets/img/common/icon_egg.svg", alt="")
+            .c-card-icon__img: img.js-cardIcon(src="/assets/img/common/icon_egg.svg", alt="")
             p.c-card-icon__text 元おむらいす屋さん。大学卒業後約6年間働く。
           li.c-card-icon__item
-            .c-card-icon__img: img(src="/assets/img/common/icon_pc.svg", alt="")
+            .c-card-icon__img: img.js-cardIcon(src="/assets/img/common/icon_pc.svg", alt="")
             p.c-card-icon__text 前職はWeb制作会社で約1年半コーディングを経験。
           li.c-card-icon__item
-            .c-card-icon__img: img(src="/assets/img/common/icon_holiday.svg", alt="")
+            .c-card-icon__img: img.js-cardIcon(src="/assets/img/common/icon_holiday.svg", alt="")
             p.c-card-icon__text ひと休み。ただ好きなことをする。
           li.c-card-icon__item
-            .c-card-icon__img: img(src="/assets/img/common/icon_design.svg", alt="")
+            .c-card-icon__img: img.js-cardIcon(src="/assets/img/common/icon_design.svg", alt="")
             p.c-card-icon__text Web制作全般に興味を持ち職業訓練校に通う。
 
-        section.p-content.-center.-mt
-          .p-content__textArea
-            h3.p-content__head 最近のこと
-            p.p-content__text After Effectsの操作方法を勉強しながら花火のアニメーションを制作しました。Lottieで実装しています。
-          .p-content__imgArea
-            #js-animation-hanabi
+      //- section.p-content.-center.-mt
+      //-   .p-content__textArea
+      //-     h3.p-content__head 最近のこと
+      //-     p.p-content__text After Effectsの操作方法を勉強しながら花火のアニメーションを制作しました。Lottieで実装しています。
+      //-   .p-content__imgArea
+      //-     #js-animation-hanabi
   // /#about
 
   section#work.c-section
     .l-container
-      h2.c-head-primary(lang="en")
-        span.c-head-primary__icon
-          img(src="/assets/img/common/icon_work.svg", alt="")
-        | Work
-      include include/_category
+      h2.c-head-primary.-work(lang="en")
+        span.js-splitTextWrap.c-head-primary__in Work
+          //- span#js-animation-hanabi.c-head-primary__animation
+      //- include include/_category
       include include/_work
+      include include/single/_portfolio
+      include include/single/_frolist
+      include include/single/_comparison
+      include include/single/_school-stairs
+      include include/single/_school-summer
+      include include/single/_music
+
   // /#work
+    
 
   section#skill.c-section
     .l-container
-      h2.c-head-primary(lang="en")
-        span.c-head-primary__icon
-          img(src="/assets/img/common/icon_skill.svg", alt="")
-        | Skill
-      
+      h2.c-head-primary.-skill(lang="en")
+        span.js-splitTextWrap.c-head-primary__in Skill
+          //- span#js-animation-bounce.c-head-primary__animation
       include include/_skill
   // /#skill
 
@@ -107,24 +145,20 @@ block mainContent
     .c-bg
     .l-container
       h2.c-head-primary(lang="en")
-        span.c-head-primary__icon
-          img(src="/assets/img/common/icon_skill.svg", alt="")
-        | Like
+        span.js-splitTextWrap.c-head-primary__in Like
       section.p-content
         .p-content__textArea
           h3.p-content__head 「音」が好き
           p.p-content__text 吹奏楽やバンド活動の経験から、音楽を聴くのも演奏するのも好きです。
           p.p-content__text 音楽だけでなく生活音や環境音に耳を澄ますのも好きで、音を聞き分けることや耳コピが得意です。
-          p.p-content__text CubaseというDAWソフトを使って時々家で録音したりもしていて、ピッチ補正という少し地味な趣味を持っています。
+          p.p-content__text CubaseというDAWソフトを使って時々家で録音したりもしています。
         .p-content__imgArea
           img(src="/assets/img/common/img_music.jpg", alt="バンドで撮影したMVの画像")
 
   section#contact.c-section
     .l-container
       h2.c-head-primary(lang="en")
-        span.c-head-primary__icon
-          img(src="/assets/img/common/icon_contact.svg", alt="")
-        | Contact
+        span.js-splitTextWrap.c-head-primary__in Contact
       p.c-text.-center ご連絡はこちらのメールアドレスへお願いいたします。
       p.c-button.c-button-radius.-center.-mt.-width
         a.c-button-radius__text(href="mailto:np10320@gmail.com", target="_blank", rel="noopener noreferrer", lang="en")

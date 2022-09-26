@@ -12,31 +12,51 @@
 }
 
 /* ナビゲーションボタン */
-.swiper-button-next,
-.swiper-button-prev {
+.js-pager-next,
+.js-pager-prev {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
   box-sizing: border-box;
   width: 26px;
   height: 26px;
+  transform: translateY(-50%);
   border-radius: 50%;
   opacity: 0.7;
   background-color: $main-color;
   color: #fff;
 }
-.swiper-button-next::after,
-.swiper-button-prev::after {
-  font-size: 10px;
+.js-pager-next::after,
+.js-pager-prev::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: calc(50% - 1px);
+  width: 9px;
+  height: 9px;
+  transform: rotate(45deg) translateY(-50%);
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
 }
-.swiper-button-next {
+.js-pager-next {
   right: -13px;
+  &::after {
+    left: 3px;
+  }
 }
-.swiper-button-prev {
+.js-pager-prev {
   left: -13px;
+  &::after {
+    left: 14px;
+    transform: rotate(-45deg) translateY(-50%) scale(-1, 1);
+  }
 }
 
 /* ページネーション */
-.swiper-pagination {
+.js-pagenation {
   position: relative;
   margin-top: 10px;
+  text-align: center;
 }
 .swiper-pagination-bullet {
   margin: 0 6px;
@@ -56,9 +76,9 @@
 
 /* スライドが1枚の時 */
 .js-swiper-wrap.is-noSlider {
-  .swiper-pagination,
-  .swiper-button-prev,
-  .swiper-button-next {
+  .js-pagenation,
+  .js-pager-prev,
+  .js-pager-next {
     display: none;
   }
 }

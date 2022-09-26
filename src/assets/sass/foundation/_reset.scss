@@ -157,7 +157,7 @@ html {
 
 body {
   min-height: 100%;
-  padding-top: 50px;
+  // padding-top: 50px;
   transition: background-color 0.5s;
   background: $base-color;
   color: $primary-text-color;
@@ -172,7 +172,7 @@ body {
   }
 
   @include mq(md) {
-    padding-top: 80px;
+    // padding-top: 80px;
   }
 
   .is-drawerActive & {

@@ -8,29 +8,51 @@
 .c-head-primary {
   display: block;
   margin-bottom: pxToRem(32px);
-  font-size: pxToRem(22px);
+  font-size: pxToRem(28px);
+  font-weight: bold;
   line-height: 1.5;
   text-align: center;
-  &__icon {
+  span {
     display: inline-block;
+  }
+  &__in {
     position: relative;
-    top: pxToRem(2px);
-    margin-right: pxToRem(6px);
-    img {
-      width: pxToRem(22px);
-      height: pxToRem(22px);
-      vertical-align: baseline;
+  }
+  &__animation {
+    position: absolute;
+    top: 50%;
+    left: -100px;
+    width: 100px;
+    height: 100px;
+    transform: translateY(-50%);
+  }
+  &.-skill {
+    .c-head-primary__animation {
+      right: -150px;
+      left: auto;
+      width: 150px;
+      height: 150px;
     }
   }
   @include mq(md) {
     margin-bottom: pxToRem(46px);
-    text-align: left;
+    font-size: pxToRem(34px);
+    &__animation {
+      left: -150px;
+      width: 150px;
+      height: 150px;
+    }
+    &.-skill {
+      .c-head-primary__animation {
+        right: -180px;
+        width: 180px;
+        height: 180px;
+      }
+    }
   }
   @include mq(lg) {
     margin-bottom: pxToRem(64px);
-  }
-  @include mq(xxl) {
-    // margin-bottom: pxToRem(32px);
+    font-size: pxToRem(56px);
   }
 }
 

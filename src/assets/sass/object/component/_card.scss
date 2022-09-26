@@ -146,6 +146,7 @@
     }
   }
   @include mq(lg) {
+    margin-top: pxToRem(100px);
     &__item {
       width: calc(20% - pxToRem(40px));
     }
