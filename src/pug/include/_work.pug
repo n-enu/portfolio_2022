@@ -1,68 +1,73 @@
 -
   const works = [
-    //- {
-    //-   category: 'web',
-    //-   title: 'ポートフォリオサイト',
-    //-   design: 'XD / After Effects',
-    //-   coding: 'HTML / CSS / Javascript / webpack',
-    //-   img: 'thumb_portfolio_dark.jpg',
-    //-   link: '/work/portfolio/'
-    //- },
     {
       category: 'web',
-      title: 'オリジナルサイト',
-      design: 'Figma / Photoshop / illustlator / After Effects',
-      coding: 'HTML / CSS / Javascript / webpack',
-      img: 'screen_flower01_pc',
-      link: '/work/florist/'
+      title: 'ポートフォリオサイト',
+      tool: 'HTML / CSS / Javascript / webpack / XD / After Effects',
+      img: 'thumb_portfolio_dark.jpg',
+      link: '/work/portfolio/',
+      id: 'portfolio'
     },
     {
       category: 'web',
       title: 'オリジナルサイト',
-      design: 'XD / Photoshop',
-      coding: 'HTML / CSS / Javascript / PHP / Wordpress',
+      tool: 'HTML / CSS / Javascript / webpack / Figma / Photoshop / illustlator / After Effects',
+      img: 'screen_flower01_pc',
+      link: '/work/florist/',
+      id: "florist"
+    },
+    {
+      category: 'web',
+      title: 'オリジナルサイト',
+      tool: 'HTML / CSS / Javascript / PHP / Wordpress / XD / Photoshop',
       img: 'screen_company01_pc',
-      link: '/work/comparison/'
+      link: '/work/comparison/',
+      id: "comparison"
     },
     {
       category: 'graphic',
       title: 'A4フライヤー',
-      design: 'Photoshop / illustlator',
+      tool: 'Photoshop / illustlator',
       img: 'thumb_flyer01',
-      link: '/work/school-stairs/'
+      link: '/work/school-stairs/',
+      id: "school-stairs",
     },
     //- {
     //-   category: 'graphic',
     //-   title: 'A4フライヤー',
-    //-   design: 'Photoshop / illustlator',
+    //-   tool: 'Photoshop / illustlator',
     //-   img: 'thumb_flyer02',
     //-   link: '/work/school-future/'
+
     //- },
     {
       category: 'graphic',
       title: 'A4フライヤー',
-      design: 'Photoshop / illustlator',
+      tool: 'Photoshop / illustlator',
       img: 'thumb_flyer03',
-      link: '/work/school-summer/'
+      link: '/work/school-summer/',
+      id: 'school-summer',
     },
     {
       category: 'banner',
       title: 'バナー',
-      design: 'Photoshop / illustlator',
+      tool: 'Photoshop / illustlator',
       img: 'bnr_music_md',
-      link: '/work/music/'
-    },
-    {
-      category: 'banner',
-      title: 'バナー',
-      design: 'Photoshop / illustlator',
-      img: 'bnr_rain_md',
-      link: '/work/rain/'
+      link: '/work/music/',
+      id: 'music',
     },
     //- {
     //-   category: 'banner',
     //-   title: 'バナー',
-    //-   design: 'Photoshop / illustlator',
+    //-   tool: 'Photoshop / illustlator',
+    //-   img: 'bnr_rain_md',
+    //-   link: '/work/rain/',
+    //-   id: 'rain',
+    //- },
+    //- {
+    //-   category: 'banner',
+    //-   title: 'バナー',
+    //-   tool: 'Photoshop / illustlator',
     //-   img: 'bnr_sports_md',
     //-   link: '/work/sports/'
     //- },
@@ -73,11 +78,11 @@
     each work in works
       article.c-card__item(data-category=work.category)
         h3.c-card__head #{work.title}
-        ul.c-card__desc
-          if work.design
-            li.c-card__desc-item #[span.c-card__desc-head Design] : #{work.design}
-          if work.coding
-            li.c-card__desc-item #[span.c-card__desc-head Coding] : #{work.coding}
+        p.c-card__desc #{work.tool}
+         
         figure.c-card__img: img(src=`/assets/img/work/${work.img}.png`,srcset=`/assets/img/work/${work.img}.png 1x, /assets/img/work/${work.img}@2x.png 2x` , alt="")
-        p.c-card__btn.c-button.c-button-radius
-          a.c-button-radius__text(href=work.link) View
+        button.c-card__btn.c-button.c-button-radius(type="button" data-micromodal-trigger=`modal-${work.id}` role="button")
+          span.c-button-radius__text(lang="en") View
+        
+        //- p.c-card__btn.c-button.c-button-radius
+        //-   a.c-button-radius__text(href=work.link) View

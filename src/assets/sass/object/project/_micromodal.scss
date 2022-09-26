@@ -1,0 +1,158 @@
+@charset 'UTF-8';
+@use "sass:math";
+@use "../../global" as *;
+
+.modal__overlay {
+  display: flex;
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.modal__container {
+  position: relative;
+  box-sizing: border-box;
+  width: 90%;
+  height: 96vh;
+  padding: 40px 20px;
+  overflow-y: auto;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.modal__close {
+  &-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 26px;
+    height: 26px;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 2px;
+      height: 26px;
+      border-radius: 10px;
+      background-color: $main-color;
+    }
+    &::before {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+    &::after {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+  &-text {
+    display: block;
+    width: 180px;
+    margin: 30px auto 0;
+    padding: 10px 20px;
+    background: $main-color;
+    color: #fff;
+    text-align: center;
+  }
+}
+
+@include mq(md) {
+  .modal__container {
+    width: 90%;
+    height: 96vh;
+    padding: 60px 40px 50px;
+  }
+  .modal__close {
+    &-icon {
+      top: 20px;
+      right: 20px;
+      width: 30px;
+      height: 30px;
+      &::before,
+      &::after {
+        height: 30px;
+      }
+    }
+    &-text {
+      margin: 50px auto 0;
+      transition: background-color 0.4s;
+      &:hover {
+        background-color: #333;
+      }
+    }
+  }
+}
+
+/**************************\
+  Demo Animation Style
+\**************************/
+@keyframes mmfadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes mmfadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes mmslideIn {
+  from {
+    transform: translateY(15%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes mmslideOut {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-10%);
+  }
+}
+
+.micromodal-slide .modal__container,
+.micromodal-slide .modal__overlay {
+  will-change: transform;
+}
+
+.micromodal-slide[aria-hidden="false"] .modal__overlay {
+  animation: mmfadeIn 0.3s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.micromodal-slide[aria-hidden="false"] .modal__container {
+  animation: mmslideIn 0.3s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.micromodal-slide[aria-hidden="true"] .modal__overlay {
+  animation: mmfadeOut 0.3s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.micromodal-slide[aria-hidden="true"] .modal__container {
+  animation: mmslideOut 0.3s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.micromodal-slide {
+  display: none;
+}
+
+.micromodal-slide.is-open {
+  display: block;
+}
