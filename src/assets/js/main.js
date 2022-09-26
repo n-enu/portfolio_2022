@@ -4,62 +4,84 @@ import objectFitImages from "object-fit-images";
 objectFitImages();
 
 // Libraly
-import $ from "jquery";
 import Toggle from "./lib/Toggle";
 import Switch from "./lib/Switch";
 import NavBtn from "./lib/NavBtn";
+import Animation from "./lib/Animation";
+import SplitText from "./lib/SplitText";
+import BubbleText from "./lib/BubbleText";
 import Swiper from "swiper/bundle";
 import lottie from "lottie-web";
-import { gsap } from "gsap";
+import MicroModal from "micromodal";
 
 new Toggle(".js-drawer");
 new Switch();
 new NavBtn();
+new Animation();
+new SplitText();
+new BubbleText();
 
-// アニメーションの対象を取得
-const box = document.querySelector(".box");
-const bob = document.querySelector(".bob");
-
-// to 第一引数：誰に第二引数：オブジェクト内にアニメーション定義
-gsap.set([box, bob], {
-  x: 100,
+MicroModal.init({
+  disableScroll: true,
+  awaitCloseAnimation: true,
 });
 
 /* ==============================
 		Swiper
 	============================== */
-const slideLength = document.querySelectorAll(".swiper-wrapper .swiper-slide").length;
-const sliderElm = document.querySelector(".js-swiper-wrap");
-let option = {};
+const sliderWrap = document.querySelectorAll(".js-swiper");
+const elmPager = document.querySelectorAll(".swiper-pagination");
+const prev = document.querySelectorAll(".swiper-button-prev");
+const next = document.querySelectorAll(".swiper-button-next");
 
-if (slideLength == 1) {
-  option = {
-    loop: false,
-    pagination: false,
-  };
-  sliderElm.classList.add("is-noSlider");
-} else {
-  option = {
-    loop: true,
-    effect: "fade",
-    autoplay: {
-      delay: 4000,
-      disableOnInteraction: false,
-    },
-    speed: 2000,
-    fadeEffect: {
-      crossFade: true,
-    },
-    pagination: {
-      el: ".swiper-pagination",
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-  };
+for (let i = 0; i < sliderWrap.length; i++) {
+  var num = ("00" + (i + 1)).slice(-2);
+  sliderWrap[i].className += num;
+  elmPager[i].className += num;
+  prev[i].className += num;
+  next[i].className += num;
+
+  const slideLength = document.querySelectorAll(`.js-swiper${num} .swiper-slide`).length;
+  let option = {};
+
+  if (slideLength == 1) {
+    option = {
+      loop: false,
+      pagination: false,
+      navigation: false,
+    };
+    const buttonPrev = document.querySelector(`.swiper-button-prev${num}`);
+    const buttonNext = document.querySelector(`.swiper-button-next${num}`);
+    const pagenation = document.querySelector(`.swiper-pagination${num}`);
+    buttonPrev.remove();
+    buttonNext.remove();
+    pagenation.remove();
+  } else {
+    option = {
+      centeredSlides: true,
+      slidesPerView: 1,
+      loop: true,
+      effect: "fade",
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+      },
+      speed: 2000,
+      fadeEffect: {
+        crossFade: true,
+      },
+      pagination: {
+        el: ".swiper-pagination" + num,
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next" + num,
+        prevEl: ".swiper-button-prev" + num,
+      },
+    };
+  }
+  new Swiper(".js-swiper" + num, option);
 }
-new Swiper(".js-swiper", option);
 
 /* ==============================
 		Lottie
@@ -72,46 +94,9 @@ lottie.loadAnimation({
   path: "../assets/json/hanabi03.json", //jsonファイルのパス
 });
 lottie.loadAnimation({
-  container: document.getElementById("js-animation-mv"), //HTMLのID
+  container: document.getElementById("js-animation-bounce"), //HTMLのID
   renderer: "svg", // 描画形式
   loop: true, //ループするかどうか
   autoplay: true, //自動再生
   path: "/assets/json/animation_mv.json", //jsonファイルのパス
-});
-/* ==============================
-		Work絞り込み
-	============================== */
-$(function () {
-  var $btn = $(".js-category-btn [data-filter]"),
-    $list = $(".js-category-list [data-category]");
-
-  $btn.on("click", function (e) {
-    e.preventDefault();
-
-    var $this = $(this);
-    $btn.removeClass("is-active");
-    $this.addClass("is-active");
-
-    var $btnCat = $(this).attr("data-filter");
-    $list.removeClass("is-animate");
-
-    if ($btnCat == "all") {
-      $list
-        .fadeOut()
-        .promise()
-        .done(function () {
-          $list.addClass("is-animate").fadeIn();
-        });
-    } else {
-      $list
-        .fadeOut()
-        .promise()
-        .done(function () {
-          $list
-            .filter('[data-category = "' + $btnCat + '"]')
-            .addClass("is-animate")
-            .fadeIn();
-        });
-    }
-  });
 });
