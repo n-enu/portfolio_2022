@@ -64,7 +64,6 @@ export default function () {
       },
       scrollTrigger: {
         trigger: item,
-        // markers: true,
         start: "top 70%",
       },
     });
