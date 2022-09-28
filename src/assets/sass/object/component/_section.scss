@@ -7,33 +7,50 @@
 */
 .c-section {
   position: relative;
-  padding-top: pxToRem(80px);
+  padding-top: pxToRem(40px);
+  padding-bottom: pxToRem(40px);
   &:first-of-type {
     padding-top: pxToRem(40px);
   }
   &.-pt0 {
     padding-top: 0;
   }
+  &.-pb {
+    padding-bottom: pxToRem(40px);
+  }
   @include mq(md) {
     position: relative;
-    padding-top: pxToRem(100px);
+    padding-top: pxToRem(50px);
+    padding-bottom: pxToRem(50px);
     &:first-of-type {
       padding-top: pxToRem(50px);
     }
     &.-pt0 {
       padding-top: 0;
     }
+    &.-pb {
+      padding-bottom: pxToRem(50px);
+    }
   }
   @include mq(lg) {
-    padding-top: pxToRem(120px);
+    padding-top: pxToRem(60px);
+    padding-bottom: pxToRem(60px);
     &:first-of-type {
       padding-top: pxToRem(60px);
     }
     &.-pt0 {
       padding-top: 0;
     }
+    &.-pb {
+      padding-bottom: pxToRem(60px);
+    }
   }
   @include mq(xxl) {
-    padding-top: pxToRem(150px);
+    padding-top: pxToRem(70px);
+    padding-bottom: pxToRem(70px);
   }
+}
+
+#like.c-section {
+  overflow: hidden;
 }
