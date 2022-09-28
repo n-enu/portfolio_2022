@@ -1,17 +1,72 @@
 // import
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-// import { PixiPlugin } from "gsap/PixiPlugin.js";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin.js";
 
-// Animation
 export default function () {
   gsap.registerPlugin(ScrollTrigger);
 
-  // 固定するコンテンツ
-  const animeContent = document.querySelector(".l-animation-content");
+  // ローディングアニメーション
+  let flg = null;
+  let check_access = function () {
+    // sessionStorageの値を判定
+    if (sessionStorage.getItem("access_flg")) {
+      flg = 1;
+    } else {
+      sessionStorage.setItem("access_flg", true);
+      flg = 0;
+    }
+    return flg;
+  };
+
+  let $i = check_access();
+  if ($i == 0) {
+    // 1回目アクセスの処理
+    const tl_loading = gsap.timeline();
+    gsap.set(".p-loading__icon", {
+      rotation: -100,
+      yPercent: -600,
+      opacity: 0,
+    });
+    tl_loading
+      .to(".p-loading__icon", {
+        opacity: 1,
+        rotation: 0,
+        yPercent: 0,
+        ease: "Bounce.easeOut",
+        delay: 0.8,
+        duration: 1,
+      })
+      .to(
+        ".p-loading__content",
+        {
+          y: "150vh",
+          duration: 1,
+          ease: "Power1.easeInOut",
+        },
+        "+=.5"
+      )
+      .to(
+        ".p-loading__bg",
+        {
+          y: "150vh",
+          x: "150vw",
+          duration: 1,
+          ease: "Power1.easeInOut",
+        },
+        "-=.5"
+      )
+      .to(".p-loading", {
+        display: "none",
+      });
+  } else {
+    gsap.set(".p-loading", {
+      display: "none",
+    });
+  }
 
   // MVアニメーション
+  const animeContent = document.querySelector(".l-animation-content");
 
   const tl = gsap.timeline({
     scrollTrigger: {
@@ -23,49 +78,66 @@ export default function () {
     },
   });
 
+  gsap.set(".circle01", {
+    opacity: 1,
+  });
+
   tl.to(
-    ".circle01",
+    ".js-anime-name",
     {
-      scale: 3,
-      left: "-40vw",
-      bottom: "-30%",
+      scale: 2,
+      bottom: "100vw",
       duration: 50,
       opacity: 0,
     },
     "move01"
   )
-    .to(
+    .fromTo(
+      ".circle01",
+      {
+        opacity: 0,
+        scale: 0,
+      },
+      {
+        scale: 3,
+        top: "100%",
+        left: "-10%",
+        duration: 50,
+        opacity: 0.7,
+      },
+      "move01"
+    )
+    .fromTo(
       ".circle02",
       {
-        scale: 3,
-        right: "-40vw",
-        bottom: "-20vw",
-        duration: 50,
         opacity: 0,
+        scale: 0,
+      },
+      {
+        scale: 3,
+        left: "110%",
+        top: "100%",
+        duration: 50,
+        opacity: 0.7,
       },
       "move01"
     )
-    .to(
+    .fromTo(
       ".circle03",
       {
-        scale: 3,
-        right: "-40vw",
-        top: "0vw",
-        duration: 50,
+        scale: 0,
         opacity: 0,
       },
-      "move01"
-    )
-    .to(
-      ".js-anime-name",
       {
-        scale: 2,
-        bottom: "100vw",
+        scale: 3,
+        left: "100%",
+        top: "-10%",
         duration: 50,
-        opacity: 0,
+        opacity: 0.7,
       },
       "move01"
     )
+
     .to(
       ".circle-large.-blue",
       {
@@ -85,21 +157,8 @@ export default function () {
         opacity: 1,
         duration: 10,
       },
-      "-=20"
+      "-=30"
     );
-  // .to(".p-hero__content-area", {
-  //   opacity: 0,
-  //   duration: 10,
-  // });
-  // .to(
-  //   ".circle-large.-base",
-  //   {
-  //     width: "150vw",
-  //     height: "150vw",
-  //     duration: 50,
-  //   },
-  //   "+=0"
-  // );
 
   // ふわふわ浮く円
   gsap.registerPlugin(MotionPathPlugin);
@@ -145,7 +204,7 @@ export default function () {
     });
   });
 
-  // About .c-card-icon
+  // About アイコンを順番に表示
   gsap.from(".js-cardIcon", {
     scrollTrigger: {
       trigger: ".c-card-icon",
@@ -163,11 +222,10 @@ export default function () {
 
   // パララックス
   gsap.utils.toArray(".js-parallax").forEach((wrap) => {
-    const y = wrap.getAttribute("data-y") || -100;
+    const y = wrap.getAttribute("data-y") || -150;
 
     gsap.to(wrap, {
       y: y,
-      scale: 1.2,
       scrollTrigger: {
         trigger: wrap,
         start: "top 80%",

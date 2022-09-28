@@ -1,5 +1,12 @@
+.p-loading
+  .p-loading__content
+    .p-loading__icon
+      img(src="/assets/img/common/logo.svg", alt=SITE_NAME)
+  .p-loading__bg
 header.js-header.l-header.p-header
-  h1.p-header__head: a(href=ROOT_PATH).p-logo.-primary: img(src="/assets/img/common/logo.svg", alt=SITE_NAME)
+  h1.p-header__logo
+    a(href=ROOT_PATH)
+      img(src="/assets/img/common/logo.svg", alt=SITE_NAME)
   button.js-drawer.p-hamburger(type="button", aria-controls="globalNav", aria-expanded="false")
     span.p-hamburger__line
       span.u-visuallyHidden メニューを開閉

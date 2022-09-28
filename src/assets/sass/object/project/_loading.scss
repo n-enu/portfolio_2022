@@ -1,0 +1,43 @@
+@charset 'UTF-8';
+@use "sass:math";
+@use "../../global" as *;
+
+/*
+  Loading
+*/
+
+.p-loading {
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  // background-color: $main-color;
+  &__content,
+  &__bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150%;
+    height: 150%;
+    transform: translate(-50%, -50%);
+  }
+  &__content {
+    border-radius: 62% 59% 48% 52%;
+    background-color: $base-color;
+  }
+  &__icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    transform: translate(-50%, -50%);
+  }
+  &__bg {
+    z-index: -1;
+    border-radius: 62% 59% 48% 52%;
+    background-color: $main-color;
+  }
+}
