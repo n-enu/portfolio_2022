@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="75" height="75" viewBox="0 0 75 75">
+  <defs>
+    <filter id="長方形_1" x="0" y="0" width="65" height="65" filterUnits="userSpaceOnUse">
+      <feOffset dx="-5" dy="-5" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feFlood flood-color="#fff" flood-opacity="0.502"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="長方形_2" x="10" y="10" width="65" height="65" filterUnits="userSpaceOnUse">
+      <feOffset dx="5" dy="5" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2.5" result="blur-2"/>
+      <feFlood flood-color="#8e8e8e" flood-opacity="0.102"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="グループ_91" data-name="グループ 91" transform="translate(12.5 12.5)">
+    <g id="グループ_4" data-name="グループ 4">
+      <g transform="matrix(1, 0, 0, 1, -12.5, -12.5)" filter="url(#長方形_1)">
+        <rect id="長方形_1-2" data-name="長方形 1" width="50" height="50" rx="8" transform="translate(12.5 12.5)" fill="#fff"/>
+      </g>
+      <g transform="matrix(1, 0, 0, 1, -12.5, -12.5)" filter="url(#長方形_2)">
+        <rect id="長方形_2-2" data-name="長方形 2" width="50" height="50" rx="8" transform="translate(12.5 12.5)" fill="#f9f8f6"/>
+      </g>
+    </g>
+    <text id="N" transform="translate(17.032 33)" fill="#809bb4" font-size="24" font-family="ZenKakuGothicAntique-Bold, Zen Kaku Gothic Antique" font-weight="700"><tspan x="0" y="0">N</tspan></text>
+  </g>
+</svg>
