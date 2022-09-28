@@ -151,7 +151,6 @@ export default function () {
       trigger: ".c-card-icon",
       toggleActions: "play pause resume restart",
       start: "top bottom",
-      markers: true,
     },
     stagger: {
       each: 1.5,
@@ -160,5 +159,21 @@ export default function () {
     repeat: -1,
     repeatDelay: 1,
     ease: "elastic.out(0.4, 0.3)",
+  });
+
+  // パララックス
+  gsap.utils.toArray(".js-parallax").forEach((wrap) => {
+    const y = wrap.getAttribute("data-y") || -100;
+
+    gsap.to(wrap, {
+      y: y,
+      scale: 1.2,
+      scrollTrigger: {
+        trigger: wrap,
+        start: "top 80%",
+        end: "bottom top",
+        scrub: 0.5,
+      },
+    });
   });
 }
