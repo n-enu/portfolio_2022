@@ -28,8 +28,7 @@
     &-name {
       position: absolute;
       z-index: 1;
-      padding-bottom: 2%;
-      // animation: bgAnime 40s linear infinite;
+      transform: translateY(-20px);
       opacity: 1;
       -webkit-background-clip: text;
       background-image: url("../img/common/img_music04.jpg");
@@ -54,18 +53,25 @@
       }
     }
   }
+  @include mq(sm, max) {
+    &__content {
+      &-name {
+        animation: bgAnime 40s linear infinite;
+        @keyframes bgAnime {
+          0% {
+            background-position: 100vw -50vw;
+          }
+          50% {
+            background-position: 0 0;
+          }
+          100% {
+            background-position: 100vw -50vw;
+          }
+        }
+      }
+    }
+  }
 }
-// @keyframes bgAnime {
-//   0% {
-//     background-position: 100vw -50vw;
-//   }
-//   50% {
-//     background-position: 0 0;
-//   }
-//   100% {
-//     background-position: 100vw -50vw;
-//   }
-// }
 @keyframes rotation {
   0% {
     transform: rotate(0);
@@ -81,8 +87,17 @@
   border-radius: 50%;
 }
 
+.circle01,
+.circle02,
+.circle03 {
+  min-width: 80px;
+  max-width: 230px;
+  min-height: 80px;
+  max-height: 230px;
+}
+
 .circle01 {
-  bottom: 2%;
+  bottom: 3%;
   left: 7%;
   width: 16vw;
   height: 16vw;

@@ -9,7 +9,8 @@
 .p-content {
   &__imgArea {
     margin: 0 auto;
-    padding-top: pxToRem(20px);
+    margin-top: pxToRem(20px);
+    overflow: hidden;
     text-align: center;
     &.-circle {
       img {
