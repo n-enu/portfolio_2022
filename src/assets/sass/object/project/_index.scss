@@ -4,7 +4,6 @@
 //============================================
 @use "header";
 @use "footer";
-@use "logo";
 @use "global-nav";
 @use "hamburger";
 @use "hero";
@@ -18,4 +17,5 @@
 @use "garally";
 @use "animation";
 @use "grid";
-@use "_micromodal";
+@use "micromodal";
+@use "loading";
