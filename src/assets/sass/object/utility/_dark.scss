@@ -41,6 +41,12 @@ body.dark-mode {
   .p-drawer {
     background: $base-dark-color;
   }
+  .p-grid__bubble {
+    color: $base-dark-color;
+  }
+  .modal__container {
+    background-color: $base-dark-color;
+  }
   @include mq(md) {
     .p-drawer {
       background: transparent;
