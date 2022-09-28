@@ -53,6 +53,20 @@
       }
     }
   }
+  &__scroll {
+    position: absolute;
+    z-index: 10;
+    bottom: 10px;
+    text-align: center;
+    &-bounce {
+      width: 120px;
+      height: 120px;
+    }
+    span {
+      mix-blend-mode: difference;
+      font-weight: 600;
+    }
+  }
   @include mq(sm, max) {
     &__content {
       &-name {
@@ -68,6 +82,15 @@
             background-position: 100vw -50vw;
           }
         }
+      }
+    }
+  }
+  @include mq(md) {
+    &__scroll {
+      bottom: 20px;
+      &-bounce {
+        width: 140px;
+        height: 140px;
       }
     }
   }
@@ -90,30 +113,34 @@
 .circle01,
 .circle02,
 .circle03 {
+  z-index: 10;
+  top: 50%;
+  left: 50%;
   min-width: 80px;
   max-width: 230px;
   min-height: 80px;
   max-height: 230px;
+  transform: translate(-50%, -50%);
 }
 
 .circle01 {
-  bottom: 3%;
-  left: 7%;
+  // bottom: 5%;
+  // left: 9%;
   width: 16vw;
   height: 16vw;
   background-color: #fcd271;
 }
 .circle02 {
-  right: 8%;
-  bottom: 5%;
+  // right: 9%;
+  // bottom: 7%;
   width: 14vw;
   height: 14vw;
   opacity: 0.8;
   background-color: #102e37;
 }
 .circle03 {
-  top: 20%;
-  right: 10%;
+  // top: 22%;
+  // right: 9%;
   width: 8vw;
   height: 8vw;
   opacity: 0.8;
