@@ -26,11 +26,13 @@ block mainContent
     .p-hero
       .p-hero__content
         p.js-anime-name.p-hero__content-name N's#[br]PORTFOLIO SITE
-        //- .circle.circle-large.-base
         .p-hero__content-area
           .p.p-hero__content-copy はじめまして、イタノナオです。
           .p.p-hero__content-copy 見た目だけでは分からないコーディングの奥深さに興味を持ち、Web制作の世界に飛び込みました。
           .p.p-hero__content-copy あらゆることに配慮できる"やさしいエンジニア"を目指し日々勉強しています。
+        .p-hero__scroll(lang="en")
+          #js-animation-bounce.p-hero__scroll-bounce
+          span Scroll
         .textBg
         .js-fuwa.circle.circle01
         .js-fuwa.circle.circle02
@@ -53,7 +55,7 @@ block mainContent
           dd.js-bubbleDesc 春分の日だったり平日だったりします
         dl.p-grid__item
           dt.js-bubbleTitle 京都府京都市出身
-          dd.js-bubbleDesc 今も京都に住んでいます
+          dd.js-bubbleDesc 現在も京都に住んでいます
         dl.p-grid__item
           dt.js-bubbleTitle 身長152cm
           dd.js-bubbleDesc 猫背を治そうと頑張ってます
@@ -64,10 +66,10 @@ block mainContent
           dt.js-bubbleTitle 特技：耳コピ・ピッチ補正
           dd.js-bubbleDesc 音を聴くのが好きです
         dl.p-grid__item
-          dt.js-bubbleTitle 猫を飼ってみたい
-          dd.js-bubbleDesc 犬とうさぎは実家で飼ってました
+          dt.js-bubbleTitle 猫と暮らしてみたい
+          dd.js-bubbleDesc 犬とうさぎは飼っていました
         dl.p-grid__item
-          dt.js-bubbleTitle インドア
+          dt.js-bubbleTitle インドア派
           dd.js-bubbleDesc 誘われたら割とどこでも行くタイプのインドアです
         dl.p-grid__item
           dt.js-bubbleTitle 写真に興味がある
@@ -77,7 +79,7 @@ block mainContent
           dd.js-bubbleDesc 何でも食べますが固いプリンが一番です
         dl.p-grid__item
           dt.js-bubbleTitle 人の話を聞くのが好き
-          dd.js-bubbleDesc 接客の仕事をして更に好きになりました
+          dd.js-bubbleDesc 接客の仕事をして人と話すのが好きになりました
         dl.p-grid__item
           dt.js-bubbleTitle 平和主義
           dd.js-bubbleDesc 平和が一番、でもこだわりはあります
@@ -108,12 +110,12 @@ block mainContent
             .c-card-icon__img: img.js-cardIcon(src="/assets/img/common/icon_design.svg", alt="")
             p.c-card-icon__text Web制作全般に興味を持ち職業訓練校に通う。
 
-      //- section.p-content.-center.-mt
-      //-   .p-content__textArea
-      //-     h3.p-content__head 最近のこと
-      //-     p.p-content__text After Effectsの操作方法を勉強しながら花火のアニメーションを制作しました。Lottieで実装しています。
-      //-   .p-content__imgArea
-      //-     #js-animation-hanabi
+      section.p-content.-center.-mt
+        .p-content__textArea
+          h3.p-content__head 最近のこと
+          p.p-content__text After Effectsの操作方法を勉強しながら花火のアニメーションを制作しました。Lottieで実装しています。
+        .p-content__imgArea
+          #js-animation-hanabi
   // /#about
 
   section#work.c-section
@@ -133,7 +135,7 @@ block mainContent
   // /#work
     
 
-  section#skill.c-section
+  section#skill.c-section.-pb
     .l-container
       h2.c-head-primary.-skill(lang="en")
         span.js-splitTextWrap.c-head-primary__in Skill
@@ -141,8 +143,9 @@ block mainContent
       include include/_skill
   // /#skill
 
+  .c-bg
+    img.js-parallax(src="/assets/img/common/img_music04_large.jpg")
   section#like.c-section
-    .c-bg
     .l-container
       h2.c-head-primary(lang="en")
         span.js-splitTextWrap.c-head-primary__in Like
