@@ -81,7 +81,7 @@
         p.c-card__desc #{work.tool}
          
         figure.c-card__img: img(src=`/assets/img/work/${work.img}.png`,srcset=`/assets/img/work/${work.img}.png 1x, /assets/img/work/${work.img}@2x.png 2x` , alt="")
-        button.c-card__btn.c-button.c-button-radius(type="button" data-micromodal-trigger=`modal-${work.id}` role="button")
+        button.c-card__btn.c-button.c-button-radius(type="button" data-micromodal-trigger=`modal-${work.id}`)
           span.c-button-radius__text(lang="en") View
         
         //- p.c-card__btn.c-button.c-button-radius

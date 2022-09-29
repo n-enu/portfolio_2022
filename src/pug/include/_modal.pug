@@ -1,15 +1,15 @@
 .modal.micromodal-slide(id=`modal-${desc.id}` aria-hidden="true")
   .modal__overlay(tabindex="-1" data-micromodal-close)
-    article.modal__container(role="dialog" aria-modal="true" aria-labelledby=`modal-${desc.id}`)
+    .modal__container(role="dialog" aria-modal="true" aria-labelledby=`modal-${desc.id}`)
 
      
-      .modal__content#modal-1-content
+      .modal__content
         button.modal__close-icon.c-button(type="button" aria-label="Close modal" data-micromodal-close)
           span.u-visuallyHidden close
         .l-container.-small
           header.c-head-secondary
             p.c-head-secondary__cat(lang="en") #{desc.category}
-            h1.c-head-secondary__main #{desc.name}
+            h3.c-head-secondary__main #{desc.name}
 
           .p-garally.js-swiper-wrap
             .swiper
@@ -17,7 +17,7 @@
                 ul.p-garally__list.swiper-wrapper
                   each item in desc.garally
                     li.p-garally__item.swiper-slide
-                      img(src=`/assets/img/work/${item}.png` srcset=`/assets/img/work/${item}.png 1x, /assets/img/work/${item}@2x.png 2x`)
+                      img(src=`/assets/img/work/${item}.png` srcset=`/assets/img/work/${item}.png 1x, /assets/img/work/${item}@2x.png 2x`, alt="")
             .js-pagenation.swiper-pagination
             .js-pager-prev.swiper-button-prev
             .js-pager-next.swiper-button-next
