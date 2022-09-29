@@ -16,10 +16,6 @@
       position: relative;
       padding-left: pxToRem(60px);
       transition: background-color 0.3s;
-      &:hover {
-        background-color: $main-color;
-        color: #fff;
-      }
       &::before {
         content: "";
         display: inline-block;
@@ -58,7 +54,7 @@
     grid-template-columns: 1fr 1fr 1fr;
     gap: 5px 40px;
     &__item {
-      &:nth-child(-n + 8) {
+      &:nth-child(-n + 7) {
         dt,
         dd {
           width: 100%;
@@ -70,12 +66,16 @@
             right: 0;
             left: auto;
           }
+          &:hover {
+            background-color: $main-color;
+            color: #fff;
+          }
         }
       }
       &.-img {
         grid-column-end: 3;
         grid-column-start: 2;
-        grid-row-end: 8;
+        grid-row-end: 7;
         grid-row-start: 1;
         max-width: none;
         padding: 0;

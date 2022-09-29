@@ -28,7 +28,7 @@
     &-name {
       position: absolute;
       z-index: 1;
-      transform: translateY(-20px);
+      transform: translateY(-50px);
       opacity: 1;
       -webkit-background-clip: text;
       background-image: url("../img/common/img_music04.jpg");
@@ -56,7 +56,7 @@
   &__scroll {
     position: absolute;
     z-index: 10;
-    bottom: 10px;
+    bottom: 70px;
     text-align: center;
     &-bounce {
       width: 120px;
@@ -86,6 +86,11 @@
     }
   }
   @include mq(md) {
+    &__content {
+      &-name {
+        transform: translateY(-20px);
+      }
+    }
     &__scroll {
       bottom: 20px;
       &-bounce {

@@ -14,17 +14,23 @@
 /* ナビゲーションボタン */
 .js-pager-next,
 .js-pager-prev {
+  display: inline-block;
   position: absolute;
   z-index: 1;
   top: 50%;
   box-sizing: border-box;
   width: 26px;
   height: 26px;
+  padding: 0;
   transform: translateY(-50%);
+  border: 0;
   border-radius: 50%;
   opacity: 0.7;
   background-color: $main-color;
   color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  appearance: none;
 }
 .js-pager-next::after,
 .js-pager-prev::after {
