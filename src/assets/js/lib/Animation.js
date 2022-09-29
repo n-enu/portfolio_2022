@@ -49,12 +49,12 @@ export default function () {
       .to(
         ".p-loading__bg",
         {
-          y: "150vh",
-          x: "150vw",
+          y: "160vh",
+          x: "140vw",
           duration: 1,
           ease: "Power1.easeInOut",
         },
-        "-=.5"
+        "-=.4"
       )
       .to(".p-loading", {
         display: "none",
